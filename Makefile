@@ -3,7 +3,7 @@
 
 clean:  # Remove all build, test, coverage and Python artifacts.
 	rm -rf .venv
-	rm -rf atlanta_shore.egg-info
+	rm -rf lady_penelope.egg-info
 	find . -name "*.pyc" -exec rm -f {} \;
 	find . -type f -name "*.py[co]" -delete -or -type d -name "__pycache__" -delete
 	rm -rf .R/library/*
@@ -49,13 +49,13 @@ gitpod-before:  # Customize the terminal and install global project dependencies
 
 gitpod-init:  # Copy accross the pre-built .venv and the .R libraries.
 	cp -r /app/.venv .venv
-	cp -r /app/atlanta_shore.egg-info atlanta_shore.egg-info
+	cp -r /app/lady_penelope.egg-info lady_penelope.egg-info
 	.venv/bin/python -m pip install -e .
 	cp -r /app/.R/library/* .R/library
 
 gitpod-command:  # Ensure that the rserver is available.
 	# Ensure that the Rproject is available in the users home directory.
-	ln -s $(GITPOD_REPO_ROOT) $(HOME)/atlanta-shore
+	ln -s $(GITPOD_REPO_ROOT) $(HOME)/lady-penelope
 	# Restart the rserver with sudo otherwise it won't run for the gitpod user (dunno why).
 	sudo rserver
 	sudo pkill rserver
