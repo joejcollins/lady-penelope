@@ -1,0 +1,29 @@
+{
+    "version": "0.2",
+    "language": "en",
+    "words": [
+        "abcdefghijklmnopqrstuvwxyz",
+        "autouse",
+        "azuretools",
+        "caplog",
+        "charliermarsh",
+        "Codespaces",
+        "devcontainer",
+        "devcontainers",
+        "eamodio",
+        "endregion",
+        "Errno",
+        "jsonify",
+        "mypy",
+        "pycache",
+        "Pylance",
+        "pytest",
+        "reditorsupport",
+        "rterm",
+        "scrollback",
+        "sourcery",
+        "tamasfe",
+        "venv",
+        "wsgi"
+    ]
+}

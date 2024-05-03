@@ -52,10 +52,6 @@ extend-exclude = '''
 )/
 '''
 
-[tool.isort]
-profile = "black"
-line_length = 88
-
 [tool.pyright]
 exclude = ["**/node_modules",
     "**/__pycache__"

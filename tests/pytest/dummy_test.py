@@ -1,4 +1,7 @@
 
 
 def test_dummy():
-    assert 1 == 1
+    """Dummy test."""
+    a = 1
+    b = 1
+    assert a == b
