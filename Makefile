@@ -56,6 +56,9 @@ gitpod-command:  # Ensure that the rserver is available.
 	sudo rserver
 	sudo pkill rserver
 
+kill: # Kill the servers on ports from Flask to Rstudio.
+	lsof -i tcp:5000-8787 | awk 'NR!=1 {print $$2}' | xargs kill 2>/dev/null || true
+
 lint:  # Lint the code with ruff and sourcery.
 	.venv/bin/python -m ruff check ./python_src ./tests
 	.venv/bin/sourcery login --token $$SOURCERY_TOKEN
