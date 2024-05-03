@@ -24,10 +24,6 @@ docker:  # Build tag and push the docker image
 help: # Show help for each of the makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
-.PHONY: docs  # because there is a directory called docs.
-docs:  # Build the mkdocs documentation.
-	.venv/bin/python -m mkdocs build --clean
-
 gitpod-before:  # Customize the terminal and install global project dependencies.
 	# Move the R library to where the developers can see it like the .venv.
 	mkdir -p .R/library
@@ -60,8 +56,10 @@ gitpod-command:  # Ensure that the rserver is available.
 	sudo rserver
 	sudo pkill rserver
 
-lint:  # Lint the code with ruff, yamllint and ansible-lint.
-	.venv/bin/python -m ruff check .
+lint:  # Lint the code with ruff and sourcery.
+	.venv/bin/python -m ruff check ./python_src ./tests
+	.venv/bin/sourcery login --token $$SOURCERY_TOKEN
+	.venv/bin/sourcery review ./src ./tests --check --no-summary
 
 mypy:  # Type check the code with mypy.
 	.venv/bin/python -m mypy ./python_src ./tests
