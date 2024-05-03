@@ -1,95 +1,90 @@
 {
-	"name": "Rocker based Dockerfile",
-	"build": {
-		// Sets the run context to one level up instead of the .devcontainer folder.
-		"context": "..",
-		"dockerfile": "../Dockerfile"
-	},
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {},
-		"ghcr.io/devcontainers-contrib/features/starship:1": {}
-	},
-	"forwardPorts": [8787],
-	"postCreateCommand": ". ./.devcontainer/post-create.sh  > ../post-create-log.txt",
-	// Configure tool-specific properties.
-	"customizations": {
-		"vscode": {
-			"settings": {
-				"[python]": {
-					"editor.formatOnSave": true,
-					"editor.codeActionsOnSave": {
-						"source.fixAll": "always"
-					}
-				},
-				"editor.detectIndentation": true,
-				"editor.minimap.enabled": false,
-				"editor.rulers": [
-					88
-				],
-				"files.exclude": {
-					"**/__pycache__": true,
-					"**/*.pyc": true,
-					"**/.git/objects/**": true,
-					"**/.git/subtree-cache/**": true,
-					"**/.DS_Store": true
-				},
-				"files.watcherExclude": {
-					"**/__pycache__": true,
-					"**/*.pyc": true,
-					"**/.git/objects/**": true,
-					"**/.git/subtree-cache/**": true,
-					"**/.pytest-cache/**": true,
-					"**/.ruff-cache/**": true,
-					"**/.venv/**": true,
-					"**/.DS_Store": true,
-					"**/typings": true
-				},
-				"search.exclude": {
-					"**/__pycache__": true,
-					"**/*.pyc": true,
-					"**/.git/objects/**": true,
-					"**/.git/subtree-cache/**": true,
-					"**/.venv/**": true,
-					"**/.DS_Store": true
-				},
-				"python.defaultInterpreterPath": ".venv/bin/python",
-				"python.languageServer": "Pylance",
-				"python.terminal.activateEnvironment": true,
-				"python.testing.pytestArgs": [
-					"./tests"
-				],
-				"python.testing.pytestEnabled": true,
-				"python.testing.unittestEnabled": false,
-				"r.bracketedPaste": true,
-				"r.rterm.linux": "${workspaceFolder}/.venv/bin/radian",
-				"terminal.integrated.defaultProfile.linux": "bash",
-				"terminal.integrated.profiles.linux": {
-					"bash": {
-						"path": "bash",
-						"args": [
-							"-l"
-						]
-					}
-				},
-				"terminal.integrated.scrollback": 100000,
-				"terminal.integrated.shellIntegration.enabled": true
-			},
-			"extensions": [
-				"charliermarsh.ruff",
-				"ms-azuretools.vscode-docker",
-				"charliermarsh.ruff",
-				"eamodio.gitlens",
-				"james-yu.latex-workshop",
-				"ms-python.black-formatter",
-				"ms-python.mypy-type-checker",
-				"ms-python.python",
-				"RDebugger.r-debugger",
-				"reditorsupport.r",
-				"streetsidesoftware.code-spell-checker",
-				"tamasfe.even-better-toml"
-			]
-		}
-	}
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+   "name":"Rocker",
+   "image":"rocker/verse:4.3.2",
+   "features":{
+      "ghcr.io/devcontainers/features/docker-in-docker:2":{},
+      "ghcr.io/devcontainers-contrib/features/starship:1":{}
+   },
+   "forwardPorts":[
+      8787
+   ],
+   "postCreateCommand":". ./.devcontainer/post-create.sh  > ../post-create-log.txt",
+   "customizations":{
+      "vscode":{
+         "settings":{
+            "[python]":{
+               "editor.formatOnSave":true,
+               "editor.codeActionsOnSave":{
+                  "source.fixAll":"always"
+               }
+            },
+            "editor.detectIndentation":true,
+            "editor.minimap.enabled":false,
+            "editor.rulers":[
+               88
+            ],
+            "files.exclude":{
+               "**/__pycache__":true,
+               "**/*.pyc":true,
+               "**/.git/objects/**":true,
+               "**/.git/subtree-cache/**":true,
+               "**/.DS_Store":true
+            },
+            "files.watcherExclude":{
+               "**/__pycache__":true,
+               "**/*.pyc":true,
+               "**/.git/objects/**":true,
+               "**/.git/subtree-cache/**":true,
+               "**/.pytest-cache/**":true,
+               "**/.ruff-cache/**":true,
+               "**/.venv/**":true,
+               "**/.DS_Store":true,
+               "**/typings":true
+            },
+            "search.exclude":{
+               "**/__pycache__":true,
+               "**/*.pyc":true,
+               "**/.git/objects/**":true,
+               "**/.git/subtree-cache/**":true,
+               "**/.venv/**":true,
+               "**/.DS_Store":true
+            },
+            "python.defaultInterpreterPath":".venv/bin/python",
+            "python.languageServer":"Pylance",
+            "python.terminal.activateEnvironment":true,
+            "python.testing.pytestArgs":[
+               "./tests"
+            ],
+            "python.testing.pytestEnabled":true,
+            "python.testing.unittestEnabled":false,
+            "r.bracketedPaste":true,
+            "r.rterm.linux":"${workspaceFolder}/.venv/bin/radian",
+            "terminal.integrated.defaultProfile.linux":"bash",
+            "terminal.integrated.profiles.linux":{
+               "bash":{
+                  "path":"bash",
+                  "args":[
+                     "-l"
+                  ]
+               }
+            },
+            "terminal.integrated.scrollback":100000,
+            "terminal.integrated.shellIntegration.enabled":true
+         },
+         "extensions":[
+            "charliermarsh.ruff",
+            "ms-azuretools.vscode-docker",
+            "charliermarsh.ruff",
+            "eamodio.gitlens",
+            "james-yu.latex-workshop",
+            "ms-python.black-formatter",
+            "ms-python.mypy-type-checker",
+            "ms-python.python",
+            "RDebugger.r-debugger",
+            "reditorsupport.r",
+            "streetsidesoftware.code-spell-checker",
+            "tamasfe.even-better-toml"
+         ]
+      }
+   }
 }
