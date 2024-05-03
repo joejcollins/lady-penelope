@@ -59,7 +59,7 @@ gitpod-command:  # Ensure that the rserver is available.
 lint:  # Lint the code with ruff and sourcery.
 	.venv/bin/python -m ruff check ./python_src ./tests
 	.venv/bin/sourcery login --token $$SOURCERY_TOKEN
-	.venv/bin/sourcery review ./src ./tests --check --no-summary
+	.venv/bin/sourcery review ./python_src ./tests --check --no-summary
 
 mypy:  # Type check the code with mypy.
 	.venv/bin/python -m mypy ./python_src ./tests

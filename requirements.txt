@@ -25,12 +25,10 @@ attrs==23.2.0
     #   jsonschema
     #   referencing
 babel==2.14.0
-    # via
-    #   jupyterlab-server
-    #   mkdocs-material
+    # via jupyterlab-server
 beautifulsoup4==4.12.3
     # via nbconvert
-black==24.3.0
+black==24.4.2
     # via lady_penelope (pyproject.toml)
 bleach==6.1.0
     # via nbconvert
@@ -50,37 +48,37 @@ charset-normalizer==3.3.2
 click==8.1.7
     # via
     #   black
-    #   mkdocs
     #   pip-tools
-colorama==0.4.6
-    # via mkdocs-material
 comm==0.2.2
     # via
     #   ipykernel
     #   ipywidgets
 debugpy==1.8.1
     # via
-    #   lady_penelope (pyproject.toml)
     #   ipykernel
+    #   lady_penelope (pyproject.toml)
 decorator==5.1.1
     # via ipython
 defusedxml==0.7.1
     # via nbconvert
+exceptiongroup==1.2.1
+    # via
+    #   anyio
+    #   ipython
+    #   pytest
 executing==2.0.1
     # via stack-data
 fastjsonschema==2.19.1
     # via nbformat
 fqdn==1.5.1
     # via jsonschema
-ghp-import==2.1.0
-    # via mkdocs
 h11==0.14.0
     # via httpcore
 httpcore==1.0.5
     # via httpx
 httpx==0.27.0
     # via jupyterlab
-idna==3.6
+idna==3.7
     # via
     #   anyio
     #   httpx
@@ -94,7 +92,7 @@ ipykernel==6.29.4
     #   jupyter-console
     #   jupyterlab
     #   qtconsole
-ipython==8.23.0
+ipython==8.24.0
     # via
     #   ipykernel
     #   ipywidgets
@@ -110,14 +108,12 @@ jinja2==3.1.3
     #   jupyter-server
     #   jupyterlab
     #   jupyterlab-server
-    #   mkdocs
-    #   mkdocs-material
     #   nbconvert
-json5==0.9.24
+json5==0.9.25
     # via jupyterlab-server
 jsonpointer==2.4
     # via jsonschema
-jsonschema[format-nongpl]==4.21.1
+jsonschema[format-nongpl]==4.22.0
     # via
     #   jupyter-events
     #   jupyterlab-server
@@ -148,9 +144,9 @@ jupyter-core==5.7.2
     #   qtconsole
 jupyter-events==0.10.0
     # via jupyter-server
-jupyter-lsp==2.2.4
+jupyter-lsp==2.2.5
     # via jupyterlab
-jupyter-server==2.13.0
+jupyter-server==2.14.0
     # via
     #   jupyter-lsp
     #   jupyterlab
@@ -159,45 +155,27 @@ jupyter-server==2.13.0
     #   notebook-shim
 jupyter-server-terminals==0.5.3
     # via jupyter-server
-jupyterlab==4.1.6
+jupyterlab==4.1.8
     # via notebook
 jupyterlab-pygments==0.3.0
     # via nbconvert
-jupyterlab-server==2.26.0
+jupyterlab-server==2.27.1
     # via
     #   jupyterlab
     #   notebook
 jupyterlab-widgets==3.0.10
     # via ipywidgets
-lxml==5.2.1
-    # via lady_penelope (pyproject.toml)
-markdown==3.6
-    # via
-    #   mkdocs
-    #   mkdocs-material
-    #   pymdown-extensions
 markupsafe==2.1.5
     # via
     #   jinja2
-    #   mkdocs
     #   nbconvert
-matplotlib-inline==0.1.6
+matplotlib-inline==0.1.7
     # via
     #   ipykernel
     #   ipython
-mergedeep==1.3.4
-    # via mkdocs
 mistune==3.0.2
     # via nbconvert
-mkdocs==1.5.3
-    # via
-    #   lady_penelope (pyproject.toml)
-    #   mkdocs-material
-mkdocs-material==9.5.17
-    # via lady_penelope (pyproject.toml)
-mkdocs-material-extensions==1.3.1
-    # via mkdocs-material
-mypy==1.9.0
+mypy==1.10.0
     # via lady_penelope (pyproject.toml)
 mypy-extensions==1.0.0
     # via
@@ -205,7 +183,7 @@ mypy-extensions==1.0.0
     #   mypy
 nbclient==0.10.0
     # via nbconvert
-nbconvert==7.16.3
+nbconvert==7.16.4
     # via
     #   jupyter
     #   jupyter-server
@@ -216,7 +194,7 @@ nbformat==5.10.4
     #   nbconvert
 nest-asyncio==1.6.0
     # via ipykernel
-notebook==7.1.2
+notebook==7.1.3
     # via jupyter
 notebook-shim==0.2.4
     # via
@@ -224,8 +202,6 @@ notebook-shim==0.2.4
     #   notebook
 numpy==1.26.4
     # via pandas
-osgridconverter==0.1.3
-    # via lady_penelope (pyproject.toml)
 overrides==7.7.0
     # via jupyter-server
 packaging==24.0
@@ -236,34 +212,28 @@ packaging==24.0
     #   jupyter-server
     #   jupyterlab
     #   jupyterlab-server
-    #   mkdocs
     #   nbconvert
     #   pytest
     #   qtconsole
     #   qtpy
     #   rchitect
-paginate==0.5.6
-    # via mkdocs-material
-pandas==2.2.1
+pandas==2.2.2
     # via lady_penelope (pyproject.toml)
 pandocfilters==1.5.1
     # via nbconvert
 parso==0.8.4
     # via jedi
 pathspec==0.12.1
-    # via
-    #   black
-    #   mkdocs
+    # via black
 pexpect==4.9.0
     # via ipython
 pip-tools==7.4.1
     # via lady_penelope (pyproject.toml)
-platformdirs==4.2.0
+platformdirs==4.2.1
     # via
     #   black
     #   jupyter-core
-    #   mkdocs
-pluggy==1.4.0
+pluggy==1.5.0
     # via pytest
 prometheus-client==0.20.0
     # via jupyter-server
@@ -282,30 +252,26 @@ pure-eval==0.2.2
     # via stack-data
 pycparser==2.22
     # via cffi
-pydantic==2.6.4
+pydantic==2.7.1
     # via lady_penelope (pyproject.toml)
-pydantic-core==2.16.3
+pydantic-core==2.18.2
     # via pydantic
 pygments==2.17.2
     # via
     #   ipython
     #   jupyter-console
-    #   mkdocs-material
     #   nbconvert
     #   qtconsole
     #   radian
-pymdown-extensions==10.7.1
-    # via mkdocs-material
-pyproject-hooks==1.0.0
+pyproject-hooks==1.1.0
     # via
     #   build
     #   pip-tools
-pytest==8.1.1
+pytest==8.2.0
     # via lady_penelope (pyproject.toml)
 python-dateutil==2.9.0.post0
     # via
     #   arrow
-    #   ghp-import
     #   jupyter-client
     #   pandas
 python-json-logger==2.0.7
@@ -313,14 +279,8 @@ python-json-logger==2.0.7
 pytz==2024.1
     # via pandas
 pyyaml==6.0.1
-    # via
-    #   jupyter-events
-    #   mkdocs
-    #   pymdown-extensions
-    #   pyyaml-env-tag
-pyyaml-env-tag==0.1
-    # via mkdocs
-pyzmq==25.1.2
+    # via jupyter-events
+pyzmq==26.0.3
     # via
     #   ipykernel
     #   jupyter-client
@@ -335,17 +295,13 @@ radian==0.6.12
     # via lady_penelope (pyproject.toml)
 rchitect==0.4.6
     # via radian
-referencing==0.34.0
+referencing==0.35.1
     # via
     #   jsonschema
     #   jsonschema-specifications
     #   jupyter-events
-regex==2023.12.25
-    # via mkdocs-material
 requests==2.31.0
-    # via
-    #   jupyterlab-server
-    #   mkdocs-material
+    # via jupyterlab-server
 rfc3339-validator==0.1.4
     # via
     #   jsonschema
@@ -358,7 +314,7 @@ rpds-py==0.18.0
     # via
     #   jsonschema
     #   referencing
-ruff==0.3.5
+ruff==0.4.2
     # via lady_penelope (pyproject.toml)
 send2trash==1.8.3
     # via jupyter-server
@@ -375,14 +331,24 @@ sniffio==1.3.1
     #   httpx
 soupsieve==2.5
     # via beautifulsoup4
+sourcery==1.16.0
+    # via lady_penelope (pyproject.toml)
 stack-data==0.6.3
     # via ipython
 terminado==0.18.1
     # via
     #   jupyter-server
     #   jupyter-server-terminals
-tinycss2==1.2.1
+tinycss2==1.3.0
     # via nbconvert
+tomli==2.0.1
+    # via
+    #   black
+    #   build
+    #   jupyterlab
+    #   mypy
+    #   pip-tools
+    #   pytest
 tornado==6.4
     # via
     #   ipykernel
@@ -391,7 +357,7 @@ tornado==6.4
     #   jupyterlab
     #   notebook
     #   terminado
-traitlets==5.14.2
+traitlets==5.14.3
     # via
     #   comm
     #   ipykernel
@@ -412,6 +378,9 @@ types-python-dateutil==2.9.0.20240316
     # via arrow
 typing-extensions==4.11.0
     # via
+    #   anyio
+    #   async-lru
+    #   black
     #   ipython
     #   mypy
     #   pydantic
@@ -422,8 +391,6 @@ uri-template==1.3.0
     # via jsonschema
 urllib3==2.2.1
     # via requests
-watchdog==4.0.0
-    # via mkdocs
 wcwidth==0.2.13
     # via prompt-toolkit
 webcolors==1.13
@@ -432,7 +399,7 @@ webencodings==0.5.1
     # via
     #   bleach
     #   tinycss2
-websocket-client==1.7.0
+websocket-client==1.8.0
     # via jupyter-server
 wheel==0.43.0
     # via pip-tools
