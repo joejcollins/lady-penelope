@@ -1,12 +1,11 @@
 {
    "name": "Rocker based Dockerfile",
-   "image": "ghcr.io/rocker-org/devcontainer/tidyverse:4",
+   "image": "ghcr.io/rocker-org/devcontainer/r-ver:4.4",
    "features":{
-      "ghcr.io/devcontainers/features/docker-in-docker:2":{},
       "ghcr.io/devcontainers-contrib/features/starship:1":{}
    },
 	"postAttachCommand": {
-		"rstudio-start": "rserver"
+		"rstudio-start": "sudo rserver"
 	},
 	"forwardPorts": [
 		8787
