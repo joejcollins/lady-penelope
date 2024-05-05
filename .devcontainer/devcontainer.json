@@ -1,11 +1,11 @@
 {
-   "name": "Rocker based Dockerfile",
-   "image": "ghcr.io/rocker-org/devcontainer/r-ver:4.4",
+   "name": "Rocker geospatial",
+   "image": "ghcr.io/rocker-org/devcontainer/geospatial:4.4",
    "features":{
       "ghcr.io/devcontainers-contrib/features/starship:1":{}
    },
 	"postAttachCommand": {
-		"rstudio-start": "sudo rserver"
+		"rstudio-start": "sudo rserver --auth-none=1"
 	},
 	"forwardPorts": [
 		8787
