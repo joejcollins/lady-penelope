@@ -1,10 +1,6 @@
 {
-	"name": "Rocker based Dockerfile",
-	"build": {
-		// Sets the run context to one level up instead of the .devcontainer folder.
-		"context": "..",
-		"dockerfile": "../Dockerfile"
-	},
+   "name": "Rocker based Dockerfile",
+   "image": "ghcr.io/rocker-org/devcontainer/r-ver:4",
    "features":{
       "ghcr.io/devcontainers/features/docker-in-docker:2":{},
       "ghcr.io/devcontainers-contrib/features/starship:1":{}
