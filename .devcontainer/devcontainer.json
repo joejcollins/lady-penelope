@@ -89,7 +89,6 @@
          ]
       }
    },
-   "postAttachCommand": "sudo rstudio-server start",
 	"forwardPorts": [8787, 8888],
 	"portsAttributes": {
 		"8787": {
@@ -102,5 +101,5 @@
 			"requireLocalPort": true,
 			"onAutoForward": "ignore"
 		}
-	},
+	}
 }
