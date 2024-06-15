@@ -8,7 +8,9 @@ RUN echo "server-user=rstudio" >> /etc/rstudio/rserver.conf  \
 # Build the Python virtual environment and R library so they are available for other users.
 RUN apt-get --quiet update
 RUN sudo apt-get install --assume-yes python3.10-venv lsof
+
 WORKDIR /app
+RUN sudo chmod -R 777 /app
 RUN mkdir -p /app/.R/library
 COPY pyproject.toml requirements.txt Makefile /app/
 RUN make venv
