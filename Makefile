@@ -44,9 +44,9 @@ report:  # Report the python version and pip list.
 
 venv:  # Install the requirements for Python and R.
 	python3 -m venv .venv
-	# .venv/bin/python -m pip install --upgrade pip setuptools
-	# .venv/bin/python -m pip install -r requirements.txt
-	# Rscript "setup.R"
+	.venv/bin/python -m pip install --upgrade pip setuptools
+	.venv/bin/python -m pip install -r requirements.txt
+	Rscript "setup.R"
 
 test:  # Run the tests.
 	.venv/bin/python -m pytest ./tests/pytest
