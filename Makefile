@@ -24,38 +24,6 @@ docker:  # Build tag and push the docker image
 help: # Show help for each of the makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
-gitpod-before:  # Customize the terminal and install global project dependencies.
-	# Move the R library to where the developers can see it like the .venv.
-	mkdir -p .R/library
-	# And ensure that R is aware of the new location.
-	echo '.libPaths(c("'"${GITPOD_REPO_ROOT}/.R/library"'", .libPaths()))' > $(HOME)/.Rprofile
-	sudo bash -c "echo R_LIBS_USER=$$GITPOD_REPO_ROOT/.R/library > $(HOME)/.Renviron"
-	# https://stackoverflow.com/questions/47541007/how-to-i-bypass-the-login-page-on-rstudio
-	-if id -u gitpod &>/dev/null; then sudo usermod -aG sudo gitpod; fi
-	sudo bash -c "echo 'server-user=gitpod' >> /etc/rstudio/rserver.conf"
-	sudo bash -c "echo 'auth-none=1' >> /etc/rstudio/rserver.conf"
-	# For convenience open up the permissions on the TexLive directory
-	-sudo chmod -R 777 /usr/local/texlive
-	# Set the git merge strategy
-	-git config pull.rebase false
-	# Get Starship running.
-	echo 'eval "$$(starship init bash)"' >> ~/.bashrc
-	# Remove the .bash_profile so the .bashrc gets sourced.
-	rm -f ~/.bash_profile
-
-gitpod-init:  # Copy accross the pre-built .venv and the .R libraries.
-	cp -r /app/.venv .venv
-	cp -r /app/lady_penelope.egg-info lady_penelope.egg-info
-	.venv/bin/python -m pip install -e .
-	cp -r /app/.R/library/* .R/library
-
-gitpod-command:  # Ensure that the rserver is available.
-	# Ensure that the Rproject is available in the users home directory.
-	ln -s $(GITPOD_REPO_ROOT) $(HOME)/lady-penelope
-	# Restart the rserver with sudo otherwise it won't run for the gitpod user (dunno why).
-	sudo rserver
-	sudo pkill rserver
-
 kill: # Kill the servers on ports from Flask to Rstudio.
 	lsof -i tcp:5000-8787 | awk 'NR!=1 {print $$2}' | xargs kill 2>/dev/null || true
 
@@ -76,9 +44,9 @@ report:  # Report the python version and pip list.
 
 venv:  # Install the requirements for Python and R.
 	python3 -m venv .venv
-	.venv/bin/python -m pip install --upgrade pip setuptools
-	.venv/bin/python -m pip install -r requirements.txt
-	Rscript "setup.R"
+	# .venv/bin/python -m pip install --upgrade pip setuptools
+	# .venv/bin/python -m pip install -r requirements.txt
+	# Rscript "setup.R"
 
 test:  # Run the tests.
 	.venv/bin/python -m pytest ./tests/pytest
