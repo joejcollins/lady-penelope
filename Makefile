@@ -10,7 +10,7 @@ clean:  # Remove all build, test, coverage and Python artifacts.
 
 compile:  # Compile the requirements files using pip-tools.
 	rm -f requirements.*
-	.venv/bin/pip-compile --output-file=requirements.txt && echo "-e ." >> requirements.txt
+	.venv/bin/pip-compile --output-file=requirements.txt
 
 docker:  # Build tag and push the docker image
 	docker build \

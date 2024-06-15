@@ -405,8 +405,3 @@ wheel==0.43.0
     # via pip-tools
 widgetsnbextension==4.0.10
     # via ipywidgets
-
-# The following packages are considered to be unsafe in a requirements file:
-# pip
-# setuptools
--e .
