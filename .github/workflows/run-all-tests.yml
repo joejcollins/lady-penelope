@@ -1,0 +1,23 @@
+---
+name: Run All Tests
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run_python_tests:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/joejcollins/lady-penelope:latest
+
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        submodules: false
+        clean: true
+
+    - name: Add the local package and run tests.
+      run: |
+        make venv
+        make test
