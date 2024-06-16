@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 jobs:
-  run_python_tests:
+  run_all_tests:
     runs-on: ubuntu-latest
     # Use the prebuilt container and run as root.  All github actions are to be run as
     # root (= the default docker user).
