@@ -4,11 +4,11 @@ image: ghcr.io/joejcollins/lady-penelope:latest
 tasks:
   - name: R and Python setup
     before: | # Preparatory steps that should run before the main setup, such as setting up tools.
-      echo "gitpod-before"
+      sudo chown -R rstudio:rstudio /workspace
     init: | # Tasks for setting up the project, like downloading dependencies.
       make venv
     command: | # Commands that start your main application or services.
-      echo "gitpod-command"
+      sudo chown -R rstudio:rstudio /workspace
 
 ports:
   - name: Rstudio
