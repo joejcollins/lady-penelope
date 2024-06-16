@@ -12,14 +12,6 @@ compile:  # Compile the requirements files using pip-tools.
 	rm -f requirements.*
 	.venv/bin/pip-compile --output-file=requirements.txt
 
-docker:  # Build tag and push the docker image
-	docker build \
-		-t ghcr.io/joejcollins/lady-penelope:latest \
-		-f Dockerfile \
-		.
-	echo $$REPO_AND_PACKAGES_TOKEN | docker login ghcr.io -u joejcollins --password-stdin
-	docker push ghcr.io/joejcollins/lady-penelope:latest
-
 .PHONY: help
 help: # Show help for each of the makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
@@ -44,7 +36,7 @@ report:  # Report the python version and pip list.
 
 rserver:  # Run Rstudio server
 	@echo "https://127.0.0.1:8787/"
-	sudo rserver
+	sudo rstudio-server start
 
 venv:  # Install the requirements for Python and R.
 	python3 -m venv .venv
