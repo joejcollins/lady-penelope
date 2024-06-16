@@ -17,7 +17,8 @@ jobs:
         submodules: false
         clean: true
 
-    - name: Add the local package and run tests.
+    - name: Symlink the prebuilt assets and run tests.
       run: |
-        make venv
+        ln -snf /app/.venv .venv
+        ln -snf /app/.R .R
         make test

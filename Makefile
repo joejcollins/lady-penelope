@@ -42,11 +42,16 @@ report:  # Report the python version and pip list.
 	Rscript -e "installed_packages <- as.data.frame(installed.packages()); \
 		print(installed_packages[c('Package', 'LibPath')])"
 
+rserver:  # Run Rstudio server
+	@echo "https://127.0.0.1:8787/"
+	sudo rserver
+
 venv:  # Install the requirements for Python and R.
 	python3 -m venv .venv
 	.venv/bin/python -m pip install --upgrade pip setuptools
 	.venv/bin/python -m pip install -r requirements.txt
-	Rscript "setup.R"
+	-.venv/bin/python -m pip install
+	# Rscript "setup.R"
 
 test:  # Run the tests.
 	.venv/bin/python -m pytest ./tests/pytest
