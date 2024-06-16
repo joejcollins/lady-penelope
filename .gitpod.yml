@@ -9,6 +9,7 @@ tasks:
       make venv
     command: | # Commands that start your main application or services.
       sudo chown -R rstudio:rstudio /workspace
+      sudo su - rstudio
 
 ports:
   - name: Rstudio
