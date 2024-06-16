@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/joejcollins/lady-penelope:latest
+      options: --user rstudio
 
     steps:
     - uses: actions/checkout@v4
