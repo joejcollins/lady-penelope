@@ -1,10 +1,10 @@
 Package: lady.penelope
-Title: Data Template
+Title: Python and R Template
 Version: 0.0.0.9000
 Authors@R: 
     person("Joe", "Collins", , "joejcollins@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0004-5788-9856"))
-Description: Data template with Python and R.
+Description: Python and R Data Analysis Template.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

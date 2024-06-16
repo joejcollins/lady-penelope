@@ -19,6 +19,7 @@
         "Pylance",
         "pytest",
         "reditorsupport",
+        "Rstudio",
         "rterm",
         "scrollback",
         "sourcery",

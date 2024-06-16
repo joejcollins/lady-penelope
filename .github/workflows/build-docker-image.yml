@@ -4,9 +4,10 @@ on:
   push:
     branches: [ main ]
     paths:
-      - 'Dockerfile'
-      - 'environment.yml'
       - '.github/workflows/build-docker-image.yml'
+      - 'Dockerfile'
+      - 'requirements.txt'
+      - 'setup.R'
 
 jobs:
   build-and-push:

@@ -6,7 +6,7 @@ RUN echo "server-user=rstudio" >> /etc/rstudio/rserver.conf  \
  && echo "auth-none=1" >> /etc/rstudio/rserver.conf
 RUN sudo usermod -aG sudo rstudio
 
-# Build the Python virtual environment and R library so they are available for other users.
+# Build the Python virtual environment and R library so they are available to all users.
 RUN apt-get --quiet update
 RUN sudo apt-get install --assume-yes python3.10-venv lsof
 
@@ -22,3 +22,5 @@ RUN make venv
 USER rstudio
 RUN tlmgr update --self
 RUN tlmgr install isodate beamer substr babel-english sectsty float
+# For convenience open up the permissions on the TexLive directory
+RUN sudo chmod -R 777 /usr/local/texlive

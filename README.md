@@ -1,4 +1,4 @@
-# R and Python Template
+# Python and R Data Analysis Template
 
 https://github.com/jakubnowicki/r-codespaces
 

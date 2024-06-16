@@ -18,12 +18,12 @@ classifiers = [
 ]
 dependencies = [
     "black",
-    "debugpy",  # only required for debugging, not needed for production.
+    "debugpy",  # only required for debugging.
     "mypy",
     "pandas",
     "pydantic",
     "pip-tools", # used to manage requirements.txt.
-    "pytest",  # used for testing, not needed for production.
+    "pytest",  # used for testing.
     "radian",
     "ruff",
     "sourcery",

@@ -1,11 +1,6 @@
 {
 	"name": "Python and R Data Science Environment",
-	"build": {
-		// Sets the run context to one level up instead of the .devcontainer folder.
-		"context": "..",
-		// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
-		"dockerfile": "../Dockerfile"
-	},
+	"image": "ghcr.io/joejcollins/lady-penelope:latest",
    "features":{
       "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
       "ghcr.io/devcontainers-contrib/features/starship:1":{}
