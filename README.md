@@ -1,4 +1,4 @@
-# lady-penelope
+# R and Python Template
 
 https://github.com/jakubnowicki/r-codespaces
 
