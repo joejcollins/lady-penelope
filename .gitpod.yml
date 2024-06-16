@@ -4,11 +4,18 @@ image: ghcr.io/joejcollins/lady-penelope:latest
 tasks:
   - name: R and Python setup
     before: | # Preparatory steps that should run before the main setup, such as setting up tools.
-      echo "gitpod-before"
+      # And ensure that R is aware of the new location.
+      echo '.libPaths(c("'"${GITPOD_REPO_ROOT}/.R/library"'", .libPaths()))' > $HOME/.Rprofile
+      sudo bash -c "echo R_LIBS_USER=$GITPOD_REPO_ROOT/.R/library > $HOME/.Renviron"
+      # Remove the .bash_profile so the .bashrc gets sourced.
+      rm -f ~/.bash_profile
+      # Set the git merge strategy
+      -git config pull.rebase false
     init: | # Tasks for setting up the project, like downloading dependencies.
       make venv
     command: | # Commands that start your main application or services.
-      echo "gitpod-command"
+      # Ensure that the Rproj is available in the users home directory.
+      ln -s $GITPOD_REPO_ROOT $HOME/lady-penelope
 
 ports:
   - name: Rstudio
