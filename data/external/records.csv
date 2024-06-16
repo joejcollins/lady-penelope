@@ -1,0 +1,5 @@
+BRC code	Taxon name	Fam	FamA	OrdA	NS	CS	RS	Chg	Hght	Len	P1	P2	LF1	LF2	W	Clone1	Clone2	E1	E2	C	NBI	NEur	SBI	SEur	Origin	GB	IR	CI	Tjan	Tjul	Prec	Co	Br Habitats	L	F	R	N	S	Source for max height	Comment on life form	Comment on clonality	Comment on N and S limits in Europe
+0920  2527	Acaena novae-zelandiae	Rosa	Rosa	Rosa	AN				11		p		Ch		w	Node2									"Aus, NZ"	82	9	0	3.8	15.2	831		"3, 10, 18, 19"	8	3	6	3	0	average of Butcher (1961) and CTW (1962)			
+0920     3	Acer campestre	Acer	Sapi	Sapi	N		n	0.35	1500		p		Ph		w	0		7	3		1	55-60	0	<45		1389	0	0	3.6	15.7	839		"1, 3"	5	5	7	6	0	CTW (1962)			
+0920     4	Acer platanoides	Acer	Sapi	Sapi	AN				3000		p		Ph		w	0		7	3	c					Eur	1419	43	5	3.4	15.2	903		"1, 3, 17"	4	5	7	7	0	Stace (1991)			
+0920     5	Acer pseudoplatanus	Acer	Sapi	Sapi	AN			-0.40	3000		p		Ph		w	0		7	3	c					

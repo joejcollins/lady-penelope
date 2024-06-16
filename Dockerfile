@@ -1,11 +1,6 @@
 # Get a Rocker image with LaTeX already installed.
 FROM ghcr.io/rocker-org/devcontainer/geospatial:4.4
 
-# Disable RStudio Server authentication
-RUN echo "server-user=rstudio" >> /etc/rstudio/rserver.conf  \
- && echo "auth-none=1" >> /etc/rstudio/rserver.conf
-RUN sudo usermod -aG sudo rstudio
-
 # Build the Python virtual environment and R library so they are available to all users.
 RUN apt-get --quiet update
 RUN sudo apt-get install --assume-yes python3.10-venv lsof

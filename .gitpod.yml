@@ -28,6 +28,7 @@ vscode:
     - ms-python.black-formatter
     - ms-python.mypy-type-checker
     - ms-python.python
+    - ms-vscode.makefile-tools
     - RDebugger.r-debugger
     - reditorsupport.r
     - streetsidesoftware.code-spell-checker
