@@ -36,5 +36,7 @@
 			"requireLocalPort": true,
 			"onAutoForward": "openBrowser"
 		}
-	}
+	},
+   // Use 'postCreateCommand' to run commands after the container is created.
+   "postCreateCommand": ". ./.devcontainer/post-create.sh  > ../post-create-log.txt"
 }
