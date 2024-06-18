@@ -27,3 +27,4 @@ jobs:
         .venv/bin/python -m pip install --editable .
         ln -snf /app/.R .R
         make test
+  ...
