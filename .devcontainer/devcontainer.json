@@ -1,6 +1,6 @@
 {
-	"name": "Python and R Data Science Environment",
-	"image": "ghcr.io/joejcollins/lady-penelope:latest",
+	"name": "Python and R Environment.",
+	"image": "ghcr.io/joejcollins/lady-penelope-dev:latest",
    "features":{
       "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
       "ghcr.io/devcontainers-contrib/features/starship:1":{}
