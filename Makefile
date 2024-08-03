@@ -8,9 +8,13 @@ clean:  # Remove all build, test, coverage and Python artifacts.
 	find . -type f -name "*.py[co]" -delete -or -type d -name "__pycache__" -delete
 	rm -rf .R/library/*
 
-compile:  # Compile the requirements files using pip-tools.
-	rm -f requirements.*
-	.venv/bin/pip-compile --output-file=requirements.txt
+.PHONY: docs  # because there is a directory called docs.
+docs:  # Build the Sphinx documentation.
+	rm -rf site
+	.venv/bin/sphinx-build --builder html docs site
+
+docs-serve: # Serve the Sphinx documentation.
+	.venv/bin/python -m http.server --directory site
 
 .PHONY: help
 help: # Show help for each of the makefile recipes.
@@ -19,13 +23,15 @@ help: # Show help for each of the makefile recipes.
 kill: # Kill the servers on ports from Flask to Rstudio.
 	lsof -i tcp:5000-8787 | awk 'NR!=1 {print $$2}' | xargs kill 2>/dev/null || true
 
-lint:  # Lint the code with ruff and sourcery.
+lint:  # Lint the code with ruff and mypy.
 	.venv/bin/python -m ruff check ./python_src ./tests
 	.venv/bin/sourcery login --token $$SOURCERY_TOKEN
-	.venv/bin/sourcery review ./python_src ./tests --check --no-summary
-
-mypy:  # Type check the code with mypy.
 	.venv/bin/python -m mypy ./python_src ./tests
+
+lock:  # Create the lock file and requirements file.
+	rm -f requirements.*
+	.venv/bin/python -m piptools compile --output-file=requirements.txt
+	.venv/bin/python -m piptools compile --extra=dev --output-file=requirements.dev.txt
 
 report:  # Report the python version and pip list.
 	whoami
@@ -38,14 +44,20 @@ rserver:  # Run Rstudio server
 	@echo "https://127.0.0.1:8787/"
 	sudo rstudio-server start
 
-venv:  # Install the requirements for Python and R.
-	python3 -m venv .venv
-	.venv/bin/python -m pip install --upgrade pip setuptools
-	.venv/bin/python -m pip install -r requirements.txt
-	-.venv/bin/python -m pip install --editable .
-	mkdir --parents .R/library
-	Rscript "setup.R"
+test:  # Run tests.
+	.venv/bin/python -m pytest ./tests --verbose --color=yes
 
-test:  # Run the tests.
-	.venv/bin/python -m pytest ./tests/pytest
-	Rscript -e "testthat::test_dir('tests')"
+
+venv:  # Create an empty virtual environment (enough to create the requirements files).
+	-python3 -m venv .venv  # Skip failure that happens in Github Action due to permissions.
+	.venv/bin/python -m pip install --upgrade pip setuptools pip-tools
+
+venv-dev:  # Create the development virtual environment.
+	$(MAKE) venv
+	.venv/bin/python -m pip install -r requirements.dev.txt
+	.venv/bin/python -m pip install --editable .
+
+venv-prod:  # Create the production virtual environment.
+	$(MAKE) venv
+	.venv/bin/python -m pip install -r requirements.txt
+	.venv/bin/python -m pip install --editable .

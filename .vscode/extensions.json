@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "charliermarsh.ruff",
+        "ms-azuretools.vscode-docker",
+        "charliermarsh.ruff",
+        "eamodio.gitlens",
+        "james-yu.latex-workshop",
+        "ms-python.black-formatter",
+        "ms-python.mypy-type-checker",
+        "ms-python.python",
+        "ms-toolsai.jupyter",
+        "ms-vscode.makefile-tools",
+        "RDebugger.r-debugger",
+        "reditorsupport.r",
+        "streetsidesoftware.code-spell-checker",
+        "tamasfe.even-better-toml"
+    ]
+}

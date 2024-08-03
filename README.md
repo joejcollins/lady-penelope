@@ -1,4 +1,4 @@
-# Python and R Data Analysis Template
+# Python and R Template
 
 Based on:
 
