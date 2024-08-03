@@ -5,20 +5,11 @@ on:
   push:
     branches: [ main ]
     paths:
-      - '.github/workflows/build-docker-prod-image.yml'
+      - '.github/workflows/build-docker-image.yml'
       - 'Dockerfile'
       - 'requirements.txt'
       - 'setup.R'
       - 'python_src/**'
-
----
-name: Build Docker Image
-
-on:
-  push:
-    branches: [ main ]
-    paths:
-      - '.github/workflows/build-docker-image.yml'
 
 jobs:
   build-and-push:
@@ -59,20 +50,4 @@ jobs:
         tags: |
           ghcr.io/joejcollins/lady-penelope:latest
           ghcr.io/joejcollins/lady-penelope:${{ env.COMMIT_SHORT_SHA }}
-
-  # deploy_to_blocks:
-  #   runs-on: ubuntu-latest
-  #   needs: build-and-push
-  #   steps:
-  #     # https://github.com/contensis/block-push/blob/main/README.md
-  #     - name: Contensis block push action
-  #       uses: contensis/block-push@v1
-  #       with:
-  #         alias: zenhub
-  #         block-id: santa-is-coming-to-town
-  #         client-id: ${{ secrets.Z_CLIENT_ID }}
-  #         git-token: ${{ secrets.GIT_TOKEN }}
-  #         image-uri: ${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAGS }}
-  #         project-id: testingJosh
-  #         shared-secret: ${{ secrets.Z_SHARED_SECRET }}
 ...
