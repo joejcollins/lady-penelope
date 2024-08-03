@@ -1,7 +1,7 @@
 # Stage 1: Base image
 #####################
 # Get a Rocker image with LaTeX already installed.
-FROM ghcr.io/rocker-org/devcontainer/geospatial:4.4
+FROM ghcr.io/rocker-org/devcontainer/geospatial:4.4 AS base
 
 # Build the Python virtual environment and R library so they are available to all users.
 RUN apt-get --quiet update
