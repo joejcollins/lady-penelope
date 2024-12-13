@@ -5,5 +5,10 @@ auth-none=1
 auth-minimum-user-id=1000
 EOF'
 
+# Set the default user for R sessions
+sudo bash -c 'cat << EOF >> /etc/rstudio/rsession.conf
+default-user=rstudio
+EOF'
+
 # Make the virtual environment.
 make venv
