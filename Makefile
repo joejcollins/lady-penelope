@@ -41,7 +41,7 @@ report:  # Report the python version and pip list.
 		print(installed_packages[c('Package', 'LibPath')])"
 
 rserver:  # Run Rstudio server
-	@echo "https://127.0.0.1:8787/"
+	@echo "https://0.0.0.0:8787/"
 	sudo rstudio-server start
 
 test:  # Run tests.
