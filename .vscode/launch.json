@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Python: Flask",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/python_src/lady_penelope/hello.py", // Path to your Flask entry point
+        "args": [
+          "run",
+          "--no-debugger",
+          "--no-reload"
+        ],
+        "env": {
+          "FLASK_APP": "hello.py", // Update if your entry point is different
+          "FLASK_ENV": "development" // Change to production if needed
+        },
+        "jinja": true
+      }
+    ]
+  }
