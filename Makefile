@@ -40,9 +40,10 @@ report:  # Report the python version and pip list.
 	Rscript -e "installed_packages <- as.data.frame(installed.packages()); \
 		print(installed_packages[c('Package', 'LibPath')])"
 
-rserver:  # Run Rstudio server
-	@echo "https://0.0.0.0:8787/"
-	sudo rstudio-server start
+r:  # Run Rstudio server
+	@echo "https://127.0.0.1:8787/"
+	sudo rserver --server-daemonize=0
+	# sudo rstudio-server start
 
 test:  # Run tests.
 	.venv/bin/python -m pytest ./tests --verbose --color=yes
