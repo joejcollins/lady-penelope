@@ -16,6 +16,9 @@ docs:  # Build the Sphinx documentation.
 docs-serve: # Serve the Sphinx documentation.
 	.venv/bin/python -m http.server --directory site
 
+flask:  # Run a simple flask server
+	.venv/bin/python python_src/lady_penelope/hello.py
+
 .PHONY: help
 help: # Show help for each of the makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
@@ -41,13 +44,13 @@ report:  # Report the python version and pip list.
 		print(installed_packages[c('Package', 'LibPath')])"
 
 r:  # Run Rstudio server
-	@echo "https://127.0.0.1:8787/"
+	@echo "* Running on http://127.0.0.1:8787"
+	@echo "Press CTRL+C to quit"
 	sudo rserver --server-daemonize=0
 	# sudo rstudio-server start
 
 test:  # Run tests.
 	.venv/bin/python -m pytest ./tests --verbose --color=yes
-
 
 venv:  # Create an empty virtual environment (enough to create the requirements files).
 	-python3 -m venv .venv  # Skip failure that happens in Github Action due to permissions.

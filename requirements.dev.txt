@@ -4,11 +4,11 @@
 #
 #    pip-compile --extra=dev --output-file=requirements.dev.txt
 #
-alabaster==0.7.16
+alabaster==1.0.0
     # via sphinx
 annotated-types==0.7.0
     # via pydantic
-anyio==4.4.0
+anyio==4.7.0
     # via
     #   httpx
     #   jupyter-server
@@ -18,48 +18,51 @@ argon2-cffi-bindings==21.2.0
     # via argon2-cffi
 arrow==1.3.0
     # via isoduration
-asttokens==2.4.1
+asttokens==3.0.0
     # via stack-data
 async-lru==2.0.4
     # via jupyterlab
-attrs==23.2.0
+attrs==24.2.0
     # via
     #   jsonschema
     #   referencing
-babel==2.15.0
+babel==2.16.0
     # via
     #   jupyterlab-server
     #   sphinx
 beautifulsoup4==4.12.3
     # via nbconvert
-black==24.8.0
+black==24.10.0
     # via lady_penelope (pyproject.toml)
-bleach==6.1.0
+bleach==6.2.0
     # via nbconvert
-build==1.2.1
+blinker==1.9.0
+    # via flask
+build==1.2.2.post1
     # via pip-tools
-certifi==2024.7.4
+certifi==2024.8.30
     # via
     #   httpcore
     #   httpx
     #   requests
-cffi==1.16.0
+cffi==1.17.1
     # via
     #   argon2-cffi-bindings
     #   rchitect
 cfgv==3.4.0
     # via pre-commit
-charset-normalizer==3.3.2
+charset-normalizer==3.4.0
     # via requests
 click==8.1.7
     # via
     #   black
+    #   flask
     #   pip-tools
 comm==0.2.2
     # via
     #   ipykernel
     #   ipywidgets
-debugpy==1.8.3
+debugpy==1.8.11
     # via
     #   ipykernel
     #   lady_penelope (pyproject.toml)
@@ -67,9 +70,9 @@ decorator==5.1.1
     # via ipython
 defusedxml==0.7.1
     # via nbconvert
-distlib==0.3.8
+distlib==0.3.9
     # via virtualenv
-docutils==0.20.1
+docutils==0.21.2
     # via
     #   myst-parser
     #   sphinx
@@ -79,23 +82,25 @@ exceptiongroup==1.2.2
     #   anyio
     #   ipython
     #   pytest
-executing==2.0.1
+executing==2.1.0
     # via stack-data
-fastjsonschema==2.20.0
+fastjsonschema==2.21.1
     # via nbformat
-filelock==3.15.4
+filelock==3.16.1
     # via virtualenv
+flask==3.1.0
+    # via lady_penelope (pyproject.toml)
 fqdn==1.5.1
     # via jsonschema
 h11==0.14.0
     # via httpcore
-httpcore==1.0.5
+httpcore==1.0.7
     # via httpx
-httpx==0.27.0
+httpx==0.28.1
     # via jupyterlab
-identify==2.6.0
+identify==2.6.3
     # via pre-commit
-idna==3.7
+idna==3.10
     # via
     #   anyio
     #   httpx
@@ -111,29 +116,31 @@ ipykernel==6.29.5
     #   jupyter-console
     #   jupyterlab
     #   lady_penelope (pyproject.toml)
-    #   qtconsole
-ipython==8.26.0
+ipython==8.30.0
     # via
     #   ipykernel
     #   ipywidgets
     #   jupyter-console
-ipywidgets==8.1.3
+ipywidgets==8.1.5
     # via jupyter
 isoduration==20.11.0
     # via jsonschema
 isort==5.13.2
     # via lady_penelope (pyproject.toml)
-jedi==0.19.1
+itsdangerous==2.2.0
+    # via flask
+jedi==0.19.2
     # via ipython
 jinja2==3.1.4
     # via
+    #   flask
     #   jupyter-server
     #   jupyterlab
     #   jupyterlab-server
     #   myst-parser
     #   nbconvert
     #   sphinx
-json5==0.9.25
+json5==0.10.0
     # via jupyterlab-server
 jsonpointer==3.0.0
     # via jsonschema
@@ -142,17 +149,16 @@ jsonschema[format-nongpl]==4.23.0
     #   jupyter-events
     #   jupyterlab-server
     #   nbformat
-jsonschema-specifications==2023.12.1
+jsonschema-specifications==2024.10.1
     # via jsonschema
-jupyter==1.0.0
+jupyter==1.1.1
     # via lady_penelope (pyproject.toml)
-jupyter-client==8.6.2
+jupyter-client==8.6.3
     # via
     #   ipykernel
     #   jupyter-console
     #   jupyter-server
     #   nbclient
-    #   qtconsole
 jupyter-console==6.6.3
     # via jupyter
 jupyter-core==5.7.2
@@ -165,7 +171,6 @@ jupyter-core==5.7.2
     #   nbclient
     #   nbconvert
     #   nbformat
-    #   qtconsole
 jupyter-events==0.10.0
     # via jupyter-server
 jupyter-lsp==2.2.5
@@ -179,43 +184,46 @@ jupyter-server==2.14.2
     #   notebook-shim
 jupyter-server-terminals==0.5.3
     # via jupyter-server
-jupyterlab==4.2.4
-    # via notebook
+jupyterlab==4.3.3
+    # via
+    #   jupyter
+    #   notebook
 jupyterlab-pygments==0.3.0
     # via nbconvert
 jupyterlab-server==2.27.3
     # via
     #   jupyterlab
     #   notebook
-jupyterlab-widgets==3.0.11
+jupyterlab-widgets==3.0.13
     # via ipywidgets
 markdown-it-py==3.0.0
     # via
     #   mdit-py-plugins
     #   myst-parser
-markupsafe==2.1.5
+markupsafe==3.0.2
     # via
     #   jinja2
     #   nbconvert
+    #   werkzeug
 matplotlib-inline==0.1.7
     # via
     #   ipykernel
     #   ipython
-mdit-py-plugins==0.4.1
+mdit-py-plugins==0.4.2
     # via myst-parser
 mdurl==0.1.2
     # via markdown-it-py
 mistune==3.0.2
     # via nbconvert
-mypy==1.11.1
+mypy==1.13.0
     # via lady_penelope (pyproject.toml)
 mypy-extensions==1.0.0
     # via
     #   black
     #   mypy
-myst-parser==3.0.1
+myst-parser==4.0.0
     # via lady_penelope (pyproject.toml)
-nbclient==0.10.0
+nbclient==0.10.1
     # via nbconvert
 nbconvert==7.16.4
     # via
@@ -230,17 +238,17 @@ nest-asyncio==1.6.0
     # via ipykernel
 nodeenv==1.9.1
     # via pre-commit
-notebook==7.2.1
+notebook==7.3.1
     # via jupyter
 notebook-shim==0.2.4
     # via
     #   jupyterlab
     #   notebook
-numpy==2.0.1
+numpy==2.2.0
     # via pandas
 overrides==7.7.0
     # via jupyter-server
-packaging==24.1
+packaging==24.2
     # via
     #   black
     #   build
@@ -250,11 +258,9 @@ packaging==24.1
     #   jupyterlab-server
     #   nbconvert
     #   pytest
-    #   qtconsole
-    #   qtpy
     #   rchitect
     #   sphinx
-pandas==2.2.2
+pandas==2.2.3
     # via lady_penelope (pyproject.toml)
 pandocfilters==1.5.1
     # via nbconvert
@@ -266,23 +272,23 @@ pexpect==4.9.0
     # via ipython
 pip-tools==7.4.1
     # via lady_penelope (pyproject.toml)
-platformdirs==4.2.2
+platformdirs==4.3.6
     # via
     #   black
     #   jupyter-core
     #   virtualenv
 pluggy==1.5.0
     # via pytest
-pre-commit==3.8.0
+pre-commit==4.0.1
     # via lady_penelope (pyproject.toml)
-prometheus-client==0.20.0
+prometheus-client==0.21.1
     # via jupyter-server
-prompt-toolkit==3.0.47
+prompt-toolkit==3.0.48
     # via
     #   ipython
     #   jupyter-console
     #   radian
-psutil==6.0.0
+psutil==6.1.0
     # via ipykernel
 ptyprocess==0.7.0
     # via
@@ -292,53 +298,48 @@ pure-eval==0.2.3
     # via stack-data
 pycparser==2.22
     # via cffi
-pydantic==2.8.2
+pydantic==2.10.3
     # via lady_penelope (pyproject.toml)
-pydantic-core==2.20.1
+pydantic-core==2.27.1
     # via pydantic
 pygments==2.18.0
     # via
     #   ipython
     #   jupyter-console
     #   nbconvert
-    #   qtconsole
     #   radian
     #   sphinx
-pyproject-hooks==1.1.0
+pyproject-hooks==1.2.0
     # via
     #   build
     #   pip-tools
-pytest==8.3.2
+pytest==8.3.4
     # via lady_penelope (pyproject.toml)
 python-dateutil==2.9.0.post0
     # via
     #   arrow
     #   jupyter-client
     #   pandas
-python-json-logger==2.0.7
+python-json-logger==3.2.0
     # via jupyter-events
-pytz==2024.1
+pytz==2024.2
     # via pandas
-pyyaml==6.0.1
+pyyaml==6.0.2
     # via
     #   jupyter-events
     #   myst-parser
     #   pre-commit
     #   responses
-pyzmq==26.0.3
+    #   sphinxcontrib-mermaid
+pyzmq==26.2.0
     # via
     #   ipykernel
     #   jupyter-client
     #   jupyter-console
     #   jupyter-server
-    #   qtconsole
-qtconsole==5.5.2
-    # via jupyter
-qtpy==2.4.1
-    # via qtconsole
-radian==0.6.12
+radian==0.6.13
     # via lady_penelope (pyproject.toml)
-rchitect==0.4.6
+rchitect==0.4.7
     # via radian
 referencing==0.35.1
     # via
@@ -360,38 +361,35 @@ rfc3986-validator==0.1.1
     # via
     #   jsonschema
     #   jupyter-events
-rpds-py==0.19.1
+rpds-py==0.22.3
     # via
     #   jsonschema
     #   referencing
-ruff==0.5.6
+ruff==0.8.3
     # via lady_penelope (pyproject.toml)
 send2trash==1.8.3
     # via jupyter-server
-six==1.16.0
+six==1.17.0
     # via
-    #   asttokens
-    #   bleach
     #   python-dateutil
     #   rchitect
     #   rfc3339-validator
 sniffio==1.3.1
-    # via
-    #   anyio
-    #   httpx
+    # via anyio
 snowballstemmer==2.2.0
     # via sphinx
-soupsieve==2.5
+soupsieve==2.6
     # via beautifulsoup4
-sourcery==1.21.0
+sourcery==1.27.0
     # via lady_penelope (pyproject.toml)
-sphinx==7.4.7
+sphinx==8.1.3
     # via
     #   lady_penelope (pyproject.toml)
     #   myst-parser
     #   sphinx-rtd-theme
     #   sphinxcontrib-jquery
-sphinx-rtd-theme==2.0.0
+    #   sphinxcontrib-mermaid
+sphinx-rtd-theme==3.0.2
     # via lady_penelope (pyproject.toml)
 sphinxcontrib-applehelp==2.0.0
     # via sphinx
@@ -403,7 +401,7 @@ sphinxcontrib-jquery==4.1
     # via sphinx-rtd-theme
 sphinxcontrib-jsmath==1.0.1
     # via sphinx
-sphinxcontrib-mermaid==0.9.2
+sphinxcontrib-mermaid==1.0.0
     # via lady_penelope (pyproject.toml)
 sphinxcontrib-qthelp==2.0.0
     # via sphinx
@@ -415,9 +413,9 @@ terminado==0.18.1
     # via
     #   jupyter-server
     #   jupyter-server-terminals
-tinycss2==1.3.0
+tinycss2==1.4.0
     # via nbconvert
-tomli==2.0.1
+tomli==2.2.1
     # via
     #   black
     #   build
@@ -426,7 +424,7 @@ tomli==2.0.1
     #   pip-tools
     #   pytest
     #   sphinx
-tornado==6.4.1
+tornado==6.4.2
     # via
     #   ipykernel
     #   jupyter-client
@@ -450,10 +448,9 @@ traitlets==5.14.3
     #   nbclient
     #   nbconvert
     #   nbformat
-    #   qtconsole
-types-python-dateutil==2.9.0.20240316
+types-python-dateutil==2.9.0.20241206
     # via arrow
-types-requests==2.32.0.20240712
+types-requests==2.32.0.20241016
     # via lady_penelope (pyproject.toml)
 typing-extensions==4.12.2
     # via
@@ -464,20 +461,20 @@ typing-extensions==4.12.2
     #   mypy
     #   pydantic
     #   pydantic-core
-tzdata==2024.1
+tzdata==2024.2
     # via pandas
 uri-template==1.3.0
     # via jsonschema
-urllib3==2.2.2
+urllib3==2.2.3
     # via
     #   requests
     #   responses
     #   types-requests
-virtualenv==20.26.3
+virtualenv==20.28.0
     # via pre-commit
 wcwidth==0.2.13
     # via prompt-toolkit
-webcolors==24.6.0
+webcolors==24.11.1
     # via jsonschema
 webencodings==0.5.1
     # via
@@ -485,9 +482,11 @@ webencodings==0.5.1
     #   tinycss2
 websocket-client==1.8.0
     # via jupyter-server
-wheel==0.43.0
+werkzeug==3.1.3
+    # via flask
+wheel==0.45.1
     # via pip-tools
-widgetsnbextension==4.0.11
+widgetsnbextension==4.0.13
     # via ipywidgets
 
 # The following packages are considered to be unsafe in a requirements file:

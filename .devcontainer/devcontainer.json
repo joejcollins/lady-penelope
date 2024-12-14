@@ -25,19 +25,6 @@
         ]
       }
    },
-	"forwardPorts": [8787, 8888],
-	"portsAttributes": {
-		"8787": {
-			"label": "Rstudio",
-			"requireLocalPort": true,
-			"onAutoForward": "openBrowser"
-		},
-		"8888": {
-			"label": "Jupyter",
-			"requireLocalPort": true,
-			"onAutoForward": "openBrowser"
-		}
-	},
    // Use 'postCreateCommand' to run commands after the container is created.
    "postCreateCommand": ". ./.devcontainer/post-create.sh  > ../post-create-log.txt"
 }

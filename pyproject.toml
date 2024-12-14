@@ -17,6 +17,7 @@ classifiers = [
     "Operating System :: OS Independent",
 ]
 dependencies = [
+    "flask",
     "pandas",
     "pydantic",
     "pip-tools", # used to manage requirements.txt.

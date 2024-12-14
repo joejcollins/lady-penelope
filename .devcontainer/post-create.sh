@@ -6,7 +6,10 @@ auth-minimum-user-id=0
 server-user=rstudio
 EOF'
 
-# Set the default workspacesudo -u rstudio rstudio-server start
+# Set the log level for Rstudio
+sudo sed -i 's/^log-level=.*$/log-level=info/' /etc/rstudio/logging.conf
+
+# Set the default workspaces
 echo "Setting default user for R sessions..."
 sudo bash -c 'cat << EOF > /etc/rstudio/rsession.conf
 session-default-working-dir=/workspaces/lady-penelope
@@ -14,4 +17,4 @@ session-default-new-project-dir=/workspaces/lady-penelope
 EOF'
 
 # Make the virtual environment.
-make venv
+make venv-dev
