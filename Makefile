@@ -8,6 +8,14 @@ clean:  # Remove all build, test, coverage and Python artifacts.
 	find . -type f -name "*.py[co]" -delete -or -type d -name "__pycache__" -delete
 	rm -rf .R/library/*
 
+docker:  # Build tag and push the docker image
+	docker build \
+		-t ghcr.io/joejcollins/lady-penelope:latest \
+		-f Dockerfile \
+		--target development .
+	# echo $$REPO_AND_PACKAGES_TOKEN | docker login ghcr.io -u joejcollins --password-stdin
+	# docker push ghcr.io/joejcollins/lady-penelope:latest
+
 .PHONY: docs  # because there is a directory called docs.
 docs:  # Build the Sphinx documentation.
 	rm -rf site
