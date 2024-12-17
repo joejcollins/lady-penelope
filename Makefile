@@ -54,8 +54,8 @@ report:  # Report the python version and pip list.
 r:  # Run Rstudio server
 	@echo "* Running on http://127.0.0.1:8787"
 	@echo "Press CTRL+C to quit"
+	@python3 -c "import webbrowser; webbrowser.open_new('http://127.0.0.1:8787');"
 	sudo rserver --server-daemonize=0
-	# sudo rstudio-server start
 
 test:  # Run tests.
 	.venv/bin/python -m pytest ./tests --verbose --color=yes
