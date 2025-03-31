@@ -1,5 +1,5 @@
 # Get a Rocker image with LaTeX already installed.
-FROM ghcr.io/rocker-org/verse:4.3
+FROM ghcr.io/rocker-org/devcontainer/verse:4.4
 
 # # Install LaTeX.
 # RUN apt-get --quiet update \
