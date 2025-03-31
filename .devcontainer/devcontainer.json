@@ -1,5 +1,5 @@
 {
-	"name": "lady-penelope-python",
+	"name": "Python with UV",
 	"image": "ghcr.io/joejcollins/lady-penelope-python:latest",
 	// "build": {
 	// 	"dockerfile": "Dockerfile"

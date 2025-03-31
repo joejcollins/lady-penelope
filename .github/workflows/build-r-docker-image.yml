@@ -1,5 +1,5 @@
 ---
-name: Build Docker Image
+name: Build R Docker Image
 
 on:
   push:

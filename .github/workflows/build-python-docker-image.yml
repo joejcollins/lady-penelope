@@ -1,5 +1,5 @@
 ---
-name: Build Docker Image
+name: Build Python Docker Image
 
 on:
   push:

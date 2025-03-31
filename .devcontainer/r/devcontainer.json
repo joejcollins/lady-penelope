@@ -1,5 +1,5 @@
 {
-   "name": "R Environment.",
+   "name": "R with Tidyverse",
    // "image": "ghcr.io/joejcollins/lady-penelope-r:latest",
 	"build": {
 		"dockerfile": "Dockerfile"

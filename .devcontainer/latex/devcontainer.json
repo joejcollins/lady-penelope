@@ -1,5 +1,5 @@
 {
-	"name": "LaTeX",
+	"name": "LaTeX and LaTeX Workshop",
    // "image": "ghcr.io/joejcollins/lady-penelope-latex:latest",
 	"build": {
 		"dockerfile": "Dockerfile"
