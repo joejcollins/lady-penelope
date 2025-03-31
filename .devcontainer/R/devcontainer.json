@@ -1,24 +1,16 @@
 {
-   "name": "Python and R Environment.",
-   "image": "ghcr.io/joejcollins/lady-penelope-dev:latest",
+   "name": "R Environment.",
+   // "image": "ghcr.io/joejcollins/lady-penelope-r:latest",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
    "features": {
       "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
-      "ghcr.io/devcontainers-contrib/features/starship:1": {},
-      "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+      "ghcr.io/devcontainers-contrib/features/starship:1": {}
    },
    "customizations": {
       "vscode": {
          "extensions": [
-            "charliermarsh.ruff",
-            "ms-azuretools.vscode-docker",
-            "charliermarsh.ruff",
-            "eamodio.gitlens",
-            "james-yu.latex-workshop",
-            "ms-python.black-formatter",
-            "ms-python.mypy-type-checker",
-            "ms-python.python",
-            "ms-toolsai.jupyter",
-            "ms-vscode.makefile-tools",
             "RDebugger.r-debugger",
             "reditorsupport.r",
             "streetsidesoftware.code-spell-checker",
@@ -27,8 +19,7 @@
       }
    },
    "forwardPorts": [
-      8787,
-      8888
+      8787
    ],
    "portsAttributes": {
       "8787": {
@@ -38,5 +29,5 @@
       }
    },
    // Use 'postCreateCommand' to run commands after the container is created.
-   "postCreateCommand": ". ./.devcontainer/post-create.sh  > ../post-create-log.txt"
+   "postCreateCommand": ". ./.devcontainer/r/post-create.sh  > ../post-create-log.txt"
 }

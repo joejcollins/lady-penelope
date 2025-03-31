@@ -1,6 +1,10 @@
 # Sourcery won't run on `arm` so force the use of `amd64` for the base image.
 FROM mcr.microsoft.com/devcontainers/base:bookworm
 
+# Install uv for everyone not just the current user.
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh \
+ && cp /root/.local/bin/uv /usr/local/bin/uv
+
 # Install LaTeX.
 RUN apt-get --quiet update \
  && apt-get install --assume-yes texlive-latex-extra texlive-extra-utils latexmk \
