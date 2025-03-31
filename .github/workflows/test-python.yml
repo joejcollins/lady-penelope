@@ -2,7 +2,7 @@
 name: Run Python Tests
 
 on:
-  push:
+  pull_request:
     branches: [ main ]
 
 jobs:
@@ -25,5 +25,5 @@ jobs:
         run: |
           make venv
           make report
-          make test
+          make pytest
 ...
