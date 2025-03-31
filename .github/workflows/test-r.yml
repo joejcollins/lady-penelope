@@ -1,0 +1,27 @@
+---
+name: Run R Tests
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  run_all_tests:
+    runs-on: ubuntu-latest
+    # Use the prebuilt container and run as root.  All github actions are to be run as
+    # root (= the default docker user).
+    # See <https://docs.github.com/en/enterprise-server@3.12/actions/creating-actions/dockerfile-support-for-github-actions#user>.
+    container:
+      image: ghcr.io/joejcollins/lady-penelope-r:latest
+      options: --user root
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          clean: true
+
+      - name: Run tests.
+        run: |
+          make rtest
+...

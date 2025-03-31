@@ -5,9 +5,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - '.github/workflows/build-docker-image.yml'
-      - 'requirements.txt'
-      - '.devcontainer/*'
+      - '.github/workflows/build-r-docker-image.yml'
+      - '.devcontainer/r/*'
 
 jobs:
   build-and-push:
@@ -38,7 +37,7 @@ jobs:
         calculatedSha=$(git rev-parse --short ${{ github.sha }})
         echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
 
-    - name: Build and Push Production Docker Image
+    - name: Build and Push Python Docker Image
       uses: docker/build-push-action@v5
       with:
         context: .
