@@ -1,6 +1,9 @@
 {
-	"name": "alan_tracy",
-	"image": "ghcr.io/joejcollins/alan-tracy:latest",
+	"name": "lady-penelope-python",
+	// "image": "ghcr.io/joejcollins/lady-penelope-python:latest",
+	"build": {
+		"dockerfile": "./.devcontainer/Dockerfile"
+	  },
 	"customizations": {
 		"vscode": {
 			"settings": {

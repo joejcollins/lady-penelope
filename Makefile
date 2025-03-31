@@ -24,9 +24,6 @@ docs:  # Build the Sphinx documentation.
 docs-serve: # Serve the Sphinx documentation.
 	.venv/bin/python -m http.server --directory site
 
-flask:  # Run a simple flask server
-	.venv/bin/python python_src/lady_penelope/hello.py
-
 .PHONY: help
 help: # Show help for each of the makefile recipes.
 	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
@@ -40,16 +37,12 @@ lint:  # Lint the code with ruff and mypy.
 	.venv/bin/python -m mypy ./python_src ./tests
 
 lock:  # Create the lock file and requirements file.
-	rm -f requirements.*
-	.venv/bin/python -m piptools compile --output-file=requirements.txt
-	.venv/bin/python -m piptools compile --extra=dev --output-file=requirements.dev.txt
+	rm -f requirements.txt
+	uv pip compile pyproject.toml --python .venv/bin/python --output-file=requirements.txt  requirements.in
 
-report:  # Report the python version and pip list.
-	whoami
-	.venv/bin/python --version
-	.venv/bin/python -m pip list -v
-	Rscript -e "installed_packages <- as.data.frame(installed.packages()); \
-		print(installed_packages[c('Package', 'LibPath')])"
+.PHONY: help
+help: # Show help for each of the makefile recipes.
+	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
 r:  # Run Rstudio server
 	@echo "* Running on http://127.0.0.1:8787"
@@ -57,19 +50,14 @@ r:  # Run Rstudio server
 	@python3 -c "import webbrowser; webbrowser.open_new('http://127.0.0.1:8787');"
 	sudo rserver --server-daemonize=0
 
-test:  # Run tests.
-	.venv/bin/python -m pytest ./tests --verbose --color=yes
+report:  # Report the python version and pip list.
+	.venv/bin/python --version
+	uv pip list -v
 
-venv:  # Create an empty virtual environment (enough to create the requirements files).
-	-python3 -m venv .venv  # Skip failure that happens in Github Action due to permissions.
-	.venv/bin/python -m pip install --upgrade pip setuptools pip-tools
+test:  # Run the unit tests.
+	.venv/bin/pytest ./tests --verbose --color=yes
+	.venv/bin/pytest --cov=alan_tracy --cov-fail-under=20
 
-venv-dev:  # Create the development virtual environment.
-	$(MAKE) venv
-	.venv/bin/python -m pip install -r requirements.dev.txt
-	.venv/bin/python -m pip install --editable .
-
-venv-prod:  # Create the production virtual environment.
-	$(MAKE) venv
-	.venv/bin/python -m pip install -r requirements.txt
-	.venv/bin/python -m pip install --editable .
+venv:  # Create the virtual environment.
+	uv venv .venv
+	uv pip install --python .venv/bin/python --requirements requirements.txt

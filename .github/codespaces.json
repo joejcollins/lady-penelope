@@ -4,7 +4,7 @@
             "path": ".devcontainer/latex/.devcontainer.json"
         },
         "python": {
-            "path": ".devcontainer/python/.devcontainer.json"
+            "path": ".devcontainer/.devcontainer.json"
         },
         "r": {
             "path": ".devcontainer/r/.devcontainer.json"
