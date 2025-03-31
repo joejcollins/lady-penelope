@@ -40,16 +40,16 @@ lock:  # Create the lock file and requirements file.
 	rm -f requirements.txt
 	uv pip compile pyproject.toml --python .venv/bin/python --output-file=requirements.txt  requirements.in
 
+pytest:  # Run the unit tests.
+	.venv/bin/pytest ./tests --verbose --color=yes
+	.venv/bin/pytest --cov=lady_penelope --cov-fail-under=20
+
 r:  # Run Rstudio server
 	sudo su - rstudio -c 'rserver'
 
 report:  # Report the python version and pip list.
 	.venv/bin/python --version
 	uv pip list -v
-
-test:  # Run the unit tests.
-	.venv/bin/pytest ./tests --verbose --color=yes
-	.venv/bin/pytest --cov=lady_penelope --cov-fail-under=20
 
 venv:  # Create the virtual environment.
 	uv venv .venv

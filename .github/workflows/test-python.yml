@@ -1,5 +1,5 @@
 ---
-name: Run All Tests
+name: Run Python Tests
 
 on:
   push:
@@ -12,19 +12,18 @@ jobs:
     # root (= the default docker user).
     # See <https://docs.github.com/en/enterprise-server@3.12/actions/creating-actions/dockerfile-support-for-github-actions#user>.
     container:
-      image: ghcr.io/joejcollins/lady-penelope-dev:latest
+      image: ghcr.io/joejcollins/lady-penelope-python:latest
       options: --user root
 
     steps:
-    - uses: actions/checkout@v4
-      with:
-        submodules: false
-        clean: true
+      - uses: actions/checkout@v4
+        with:
+          submodules: false
+          clean: true
 
-    - name: Symlink the prebuilt assets and run tests.
-      run: |
-        ln -snf /app/.venv .venv
-        .venv/bin/python -m pip install --editable .
-        ln -snf /app/.R .R
-        make test
+      - name: Run tests.
+        run: |
+          make venv
+          make report
+          make test
 ...
