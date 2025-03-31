@@ -1,7 +1,7 @@
 # Get a Rocker image with LaTeX already installed.
 FROM ghcr.io/rocker-org/devcontainer/geospatial:4.4
 
-# # Install LaTeX.
+# # Install extra LaTeX packages (you can't use tlmgr because the repos are too old).
 # RUN apt-get --quiet update \
 #  && apt-get install --assume-yes texlive-latex-extra texlive-extra-utils latexmk \
 #  && apt-get clean \
