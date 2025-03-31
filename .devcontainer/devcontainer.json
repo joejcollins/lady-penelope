@@ -2,7 +2,7 @@
 	"name": "lady-penelope-python",
 	// "image": "ghcr.io/joejcollins/lady-penelope-python:latest",
 	"build": {
-		"dockerfile": "./.devcontainer/Dockerfile"
+		"dockerfile": "Dockerfile"
 	  },
 	"customizations": {
 		"vscode": {
