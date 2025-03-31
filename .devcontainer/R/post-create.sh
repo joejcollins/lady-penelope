@@ -15,6 +15,3 @@ sudo bash -c 'cat << EOF > /etc/rstudio/rsession.conf
 session-default-working-dir=/workspaces/lady-penelope
 session-default-new-project-dir=/workspaces/lady-penelope
 EOF'
-
-# Make the virtual environment.
-make venv-dev

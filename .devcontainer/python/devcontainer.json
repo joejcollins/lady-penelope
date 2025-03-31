@@ -1,0 +1,21 @@
+{
+	"name": "alan_tracy",
+	"image": "ghcr.io/joejcollins/alan-tracy:latest",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"python.defaultInterpreterPath": ".venv/bin/python",
+				"python.terminal.activateEnvironment": true
+			},
+			"extensions": [
+				"anweber.vscode-httpyac",
+				"charliermarsh.ruff",
+				"ms-toolsai.jupyter",
+				"ms-python.python",
+				"sourcery.sourcery",
+				"tamasfe.even-better-toml"
+			]
+		}
+	},
+	"postCreateCommand": ". ./.devcontainer/post-create.sh | tee /tmp/post-create-log.txt"
+}

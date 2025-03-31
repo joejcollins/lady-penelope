@@ -13,5 +13,5 @@ RUN tlmgr install isodate beamer substr babel-english sectsty float
 RUN sudo chmod -R 777 /usr/local/texlive
 
 # Add some labels so it looks nice in Github packages.
-LABEL org.opencontainers.image.source=https://github.com/joejcollins/lady-penelope/
-LABEL org.opencontainers.image.description="lady-penelope container."
+LABEL org.opencontainers.image.source=https://github.com/joejcollins/lady-penelope-r/
+LABEL org.opencontainers.image.description="lady-penelope-r container."
