@@ -1,49 +1,32 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "lady_penelope"
-version = "0.1.0"
+version = "0.0.1"
 authors = [
   { name="Joe Collins", email="joejcollins@gmail.com" },
 ]
 description = "Data project template."
+license = { file = "LICENSE" }
 readme = "README.md"
-requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
 ]
+requires-python = ">=3.12"
 dependencies = [
-    "flask",
     "pandas",
     "pydantic",
-    "pip-tools", # used to manage requirements.txt.
-    "radian",
-]
-
-[project.optional-dependencies]
-dev = [
-    "black",
     "debugpy",
     "ipykernel",
-    "isort",
     "mypy",
     "myst_parser",  # for documentation.
-    "pip-tools",
     "pre-commit",
     "pytest",  # used for testing.
-    "responses",
     "ruff",
     "jupyter",
-    "setuptools",
     "sourcery",
     "sphinx",  # for documentation.
     "sphinx_rtd_theme",  # for documentation.
     "sphinxcontrib-mermaid", # for diagrams in the documentation.
-    "types-requests",  # for type checking.
 ]
 
 [project.urls]
