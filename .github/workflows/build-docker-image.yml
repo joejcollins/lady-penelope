@@ -6,10 +6,8 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/build-docker-image.yml'
-      - 'Dockerfile'
       - 'requirements.txt'
-      - 'setup.R'
-      - 'python_src/**'
+      - '.devcontainer/*'
 
 jobs:
   build-and-push:
@@ -44,10 +42,9 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./Dockerfile
-        target: production
+        file: ./.devcontainer/Dockerfile
         push: true
         tags: |
-          ghcr.io/joejcollins/lady-penelope:latest
-          ghcr.io/joejcollins/lady-penelope:${{ env.COMMIT_SHORT_SHA }}
+          ghcr.io/joejcollins/lady-penelope-python:latest
+          ghcr.io/joejcollins/lady-penelope-python:${{ env.COMMIT_SHORT_SHA }}
 ...

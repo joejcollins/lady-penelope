@@ -1,13 +1,6 @@
 {
-	"name": "lady-penelope-python",
-	// "image": "ghcr.io/joejcollins/lady-penelope-python:latest",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	"hostRequirements": {
-		"cpus": 4,
-		"memory": "8gb"
-	},
+	"name": "alan_tracy",
+	"image": "ghcr.io/joejcollins/alan-tracy:latest",
 	"customizations": {
 		"vscode": {
 			"settings": {

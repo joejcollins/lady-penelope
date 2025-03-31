@@ -1,49 +1,33 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "lady_penelope"
-version = "0.1.0"
+version = "0.0.1"
 authors = [
   { name="Joe Collins", email="joejcollins@gmail.com" },
 ]
 description = "Data project template."
+license = { file = "LICENSE" }
 readme = "README.md"
-requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
 ]
+requires-python = ">=3.12"
 dependencies = [
-    "flask",
-    "pandas",
-    "pydantic",
-    "pip-tools", # used to manage requirements.txt.
-    "radian",
-]
-
-[project.optional-dependencies]
-dev = [
-    "black",
     "debugpy",
     "ipykernel",
-    "isort",
+    "loguru",
     "mypy",
     "myst_parser",  # for documentation.
-    "pip-tools",
     "pre-commit",
-    "pytest",  # used for testing.
-    "responses",
+    "python-dotenv",
+    "pytest",
+    "pytest-cov",
     "ruff",
-    "jupyter",
-    "setuptools",
     "sourcery",
+    "tqdm",
     "sphinx",  # for documentation.
     "sphinx_rtd_theme",  # for documentation.
     "sphinxcontrib-mermaid", # for diagrams in the documentation.
-    "types-requests",  # for type checking.
 ]
 
 [project.urls]
@@ -51,22 +35,10 @@ dev = [
 "repository" = "https://github.com/joejcollins/lady-penelope"
 "documentation" = "https://github.com/joejcollins/lady-penelope"
 
-[tool.setuptools]
-py-modules = [
-    "python_src",
-    "tests"
-]  #  Disable auto discovery of modules (and only include the ones we specifically want).
-
-[tool.black]
-line-length = 88
-target-version = ['py310']
-include = '\.pyi?$'
-extend-exclude = '''
-/(
-    \.eggs
-    |\.git
-)/
-'''
+[tool.pytest.ini_options]
+log_cli = false
+addopts = ["-q", "--disable-warnings", "--cache-clear"]
+testpaths = ["./tests/pytest"]
 
 [tool.pyright]
 exclude = ["**/node_modules",
@@ -96,10 +68,3 @@ warn_return_any = true
 warn_unused_configs = true
 follow_imports = "skip"
 ignore_missing_imports = true
-
-[tool.pytest.ini_options]
-minversion = "6.0"
-addopts = "-q --disable-warnings --cache-clear"
-testpaths = [
-    "./tests/pytest"
-]
