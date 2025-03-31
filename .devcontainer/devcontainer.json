@@ -3,7 +3,11 @@
 	// "image": "ghcr.io/joejcollins/lady-penelope-python:latest",
 	"build": {
 		"dockerfile": "Dockerfile"
-	  },
+	},
+	"hostRequirements": {
+		"cpus": 4,
+		"memory": "8gb"
+	},
 	"customizations": {
 		"vscode": {
 			"settings": {

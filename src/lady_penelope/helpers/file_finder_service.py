@@ -1,26 +1,22 @@
 """File finder service."""
 
+import glob
 from os import path
 from typing import Any
-
-
-def find_training_image(image_name: str) -> str:
-    """Find the training image."""
-    file_finder = FileFinderService()
-    root = file_finder.find_root()
-    return path.join(root, "data/raw/training", image_name)
 
 
 class FileFinderService:
     """Find a file upwards from a starting directory."""
 
-    def __init__(self, isfile=path.isfile, abspath=path.abspath):
-        """Initialise the file finder service, so items can be mocked for testing."""
-        self.isfile = isfile  # so we can confirm if a file exists.
-        self.abspath = (
-            # so we can get the complete path to where we are to begin with.
-            abspath
-        )
+    def __init__(self, isfile=path.isfile, abspath=path.abspath, glob=glob.glob):
+        """Initialise the file finder service.
+
+        Use dependency injection so that we can pass in mock items for testing.  Under
+        normal use the default "normal" values are used.
+        """
+        self.isfile = isfile
+        self.abspath = abspath
+        self.glob = glob
 
     def find_file_upwards(self, filename: str, start_directory: str = ".") -> Any:
         """Find a file upwards from a starting directory."""
@@ -40,9 +36,9 @@ class FileFinderService:
             current_directory = parent_directory
 
     def find_root(self, start_directory: str = ".") -> Any:
-        """Find the root of the project."""
+        """Find the root of the project.
+
+        Assuming that the pyproject.toml is in the root of the application.
+        """
         pyproject_toml = self.find_file_upwards("pyproject.toml", start_directory)
         return path.dirname(pyproject_toml) if pyproject_toml else None
-
-    def find_files_glob(self, pattern: str, start_directory: str = ".") -> Any:
-        """Find files matching a pattern."""

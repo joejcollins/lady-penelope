@@ -32,17 +32,13 @@ kill: # Kill the servers on ports from Flask to Rstudio.
 	lsof -i tcp:5000-8787 | awk 'NR!=1 {print $$2}' | xargs kill 2>/dev/null || true
 
 lint:  # Lint the code with ruff and mypy.
-	.venv/bin/python -m ruff check ./python_src ./tests
+	.venv/bin/python -m ruff check ./src ./tests
 	.venv/bin/sourcery login --token $$SOURCERY_TOKEN
-	.venv/bin/python -m mypy ./python_src ./tests
+	.venv/bin/python -m mypy ./src ./tests
 
 lock:  # Create the lock file and requirements file.
 	rm -f requirements.txt
 	uv pip compile pyproject.toml --python .venv/bin/python --output-file=requirements.txt  requirements.in
-
-.PHONY: help
-help: # Show help for each of the makefile recipes.
-	@grep -E '^[a-zA-Z0-9 -]+:.*#'  Makefile | sort | while read -r l; do printf "\033[1;32m$$(echo $$l | cut -f 1 -d':')\033[00m:$$(echo $$l | cut -f 2- -d'#')\n"; done
 
 r:  # Run Rstudio server
 	sudo su - rstudio -c 'rserver'
@@ -53,7 +49,7 @@ report:  # Report the python version and pip list.
 
 test:  # Run the unit tests.
 	.venv/bin/pytest ./tests --verbose --color=yes
-	.venv/bin/pytest --cov=alan_tracy --cov-fail-under=20
+	.venv/bin/pytest --cov=lady_penelope --cov-fail-under=20
 
 venv:  # Create the virtual environment.
 	uv venv .venv
