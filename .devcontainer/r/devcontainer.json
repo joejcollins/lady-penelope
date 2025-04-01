@@ -2,7 +2,7 @@
    "name": "R with Tidyverse",
    "build": {
       "context": "..",
-      "dockerfile": "./r/Dockerfile"
+      "dockerfile": "./Dockerfile"
    },
    "features": {
       "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
