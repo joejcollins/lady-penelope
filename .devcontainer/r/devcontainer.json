@@ -1,7 +1,8 @@
 {
    "name": "R with Tidyverse",
 	"build": {
-		"dockerfile": "r.Dockerfile"
+      "context": "..",
+		"dockerfile": "./r/Dockerfile"
 	},
    "features": {
       "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
@@ -27,5 +28,5 @@
          "onAutoForward": "openBrowser"
       }
    },
-   "postCreateCommand": ". ./.devcontainer/r_post_create.sh | tee /tmp/post_create_log.txt"
+   "postCreateCommand": ". ./.devcontainer/r/post_create.sh | tee /tmp/post_create_log.txt"
 }
