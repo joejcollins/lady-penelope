@@ -11,5 +11,5 @@ Encoding: UTF-8
 Depends: R (>= 4.0)
 Imports: MASS, Matrix, R6, cli, cpp11, dplyr, fansi, ggplot2, glue, lattice,
     lifecycle, magrittr, mgcv, nlme, pillar, pkgconfig, purrr, renv, rlang,
-    stringi, stringr, tibble, tidyr, utf8, vctrs, withr
+    stringi, stringr, tibble, tidyr, utf8, vctrs, withr, devtools
 RoxygenNote: 7.3.2
