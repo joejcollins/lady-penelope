@@ -1,9 +1,7 @@
 [project]
 name = "lady_penelope"
 version = "0.0.1"
-authors = [
-  { name="Joe Collins", email="joejcollins@gmail.com" },
-]
+authors = [{ name = "Joe Collins", email = "joejcollins@gmail.com" }]
 description = "Data project template."
 license = { file = "LICENSE" }
 readme = "README.md"
@@ -17,17 +15,18 @@ dependencies = [
     "ipykernel",
     "loguru",
     "mypy",
-    "myst_parser",  # for documentation.
+    "myst_parser",           # for documentation.
     "pre-commit",
     "python-dotenv",
     "pytest",
     "pytest-cov",
+    "radian",
     "ruff",
     "sourcery",
-    "tqdm",
-    "sphinx",  # for documentation.
-    "sphinx_rtd_theme",  # for documentation.
+    "sphinx",                # for documentation.
+    "sphinx_rtd_theme",      # for documentation.
     "sphinxcontrib-mermaid", # for diagrams in the documentation.
+    "tqdm",
 ]
 
 [project.urls]
@@ -41,9 +40,7 @@ addopts = ["-q", "--disable-warnings", "--cache-clear"]
 testpaths = ["./tests/pytest"]
 
 [tool.pyright]
-exclude = ["**/node_modules",
-    "**/__pycache__"
-]
+exclude = ["**/node_modules", "**/__pycache__"]
 reportMissingImports = true
 reportMissingTypeStubs = true
 pythonVersion = "3.10"
@@ -59,7 +56,7 @@ exclude = [
     ".pytest_cache",
     ".venv",
     ".vscode",
-    "__pycache__"
+    "__pycache__",
 ]
 
 [tool.mypy]

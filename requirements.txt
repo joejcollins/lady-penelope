@@ -10,6 +10,8 @@ babel==2.17.0
     # via sphinx
 certifi==2025.1.31
     # via requests
+cffi==1.17.1
+    # via rchitect
 cfgv==3.4.0
     # via pre-commit
 charset-normalizer==3.4.1
@@ -100,6 +102,7 @@ packaging==24.2
     # via
     #   ipykernel
     #   pytest
+    #   rchitect
     #   sphinx
 parso==0.8.4
     # via jedi
@@ -116,24 +119,29 @@ pre-commit==4.2.0
     #   lady-penelope (pyproject.toml)
     #   lady-penelope
 prompt-toolkit==3.0.50
-    # via ipython
+    # via
+    #   ipython
+    #   radian
 psutil==7.0.0
     # via ipykernel
 ptyprocess==0.7.0
     # via pexpect
 pure-eval==0.2.3
     # via stack-data
+pycparser==2.22
+    # via cffi
 pygments==2.19.1
     # via
     #   ipython
     #   ipython-pygments-lexers
+    #   radian
     #   sphinx
 pytest==8.3.5
     # via
     #   lady-penelope (pyproject.toml)
     #   lady-penelope
     #   pytest-cov
-pytest-cov==6.0.0
+pytest-cov==6.1.0
     # via
     #   lady-penelope (pyproject.toml)
     #   lady-penelope
@@ -152,6 +160,12 @@ pyzmq==26.3.0
     # via
     #   ipykernel
     #   jupyter-client
+radian==0.6.13
+    # via
+    #   lady-penelope (pyproject.toml)
+    #   lady-penelope
+rchitect==0.4.7
+    # via radian
 requests==2.32.3
     # via sphinx
 roman-numerals-py==3.1.0
@@ -161,7 +175,9 @@ ruff==0.11.2
     #   lady-penelope (pyproject.toml)
     #   lady-penelope
 six==1.17.0
-    # via python-dateutil
+    # via
+    #   python-dateutil
+    #   rchitect
 snowballstemmer==2.2.0
     # via sphinx
 sourcery==1.35.0
