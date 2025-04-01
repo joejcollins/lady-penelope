@@ -39,6 +39,9 @@ test:  # Run the unit tests.
 r:  # Run Rstudio server
 	sudo su - rstudio -c 'rserver'
 
+rtest:  # Run the R tests.
+	R -e "devtools::test()"
+
 report:  # Report the python version and pip list.
 	.venv/bin/python --version
 	uv pip list -v

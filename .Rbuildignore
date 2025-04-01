@@ -1,5 +1,8 @@
 ^renv$
 ^renv\.lock$
 ^requirements\.txt$
+^reports$
 ^.*\.Rproj$
+.venv
 ^\.Rproj\.user$
+^LICENSE\.md$
