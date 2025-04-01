@@ -21,9 +21,13 @@ jobs:
           submodules: false
           clean: true
 
-      - name: Run tests.
+      - name: Run Python tests.
         run: |
           make venv
           make report
           make test
+      
+      - name: Run R tests.
+        run: |
+          make rtest
 ...
