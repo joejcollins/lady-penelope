@@ -21,8 +21,10 @@ sudo rserver
 sleep 1
 sudo pkill rserver
 
-# Ensure git in R sees the directory as safe
+# Ensure git in RStudio sees the directory as safe
 git config --global --add safe.directory /workspaces
+# Also don't sign the commits because RStudio can't seem to manage this.
+git config commit.gpgSign false
 
 # Create the virtual environment.
 make venv
