@@ -1,9 +1,9 @@
 {
 	"name": "Python with UV",
-	"image": "ghcr.io/joejcollins/lady-penelope-python:latest",
-	// "build": {
-	// 	"dockerfile": "Dockerfile"
-	// },
+	// "image": "ghcr.io/joejcollins/lady-penelope-python:latest",
+	"build": {
+		"dockerfile": "python.Dockerfile"
+	},
 	"hostRequirements": {
 		"cpus": 4,
 		"memory": "8gb"

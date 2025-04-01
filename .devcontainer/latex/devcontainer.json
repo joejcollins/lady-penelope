@@ -1,8 +1,7 @@
 {
 	"name": "LaTeX and LaTeX Workshop",
 	"build": {
-		"context": "../..",
-		"dockerfile": "Dockerfile"
+		"dockerfile": "../latex.Dockerfile"
 		
 	},
 	"customizations": {
