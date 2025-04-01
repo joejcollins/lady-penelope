@@ -1,13 +1,13 @@
 {
     "definitions": {
         "latex": {
-            "path": ".devcontainer/latex/.devcontainer.json"
+            "path": ".devcontainer/latex_devcontainer.json"
         },
         "python": {
-            "path": ".devcontainer/.devcontainer.json"
+            "path": ".devcontainer/devcontainer.json"
         },
         "r": {
-            "path": ".devcontainer/r/.devcontainer.json"
+            "path": ".devcontainer/r_devcontainer.json"
         }
     }
 }

@@ -1,6 +1,5 @@
 {
 	"name": "LaTeX and LaTeX Workshop",
-   // "image": "ghcr.io/joejcollins/lady-penelope-latex:latest",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
@@ -12,7 +11,7 @@
 				"ms-python.python",
 				"shardulm94.trailing-spaces",
 				"stkb.rewrap",
-				"streetsidesoftware.code-spell-checker",
+				"streetsidesoftware.code-spell-checker"
 			],
 			"settings": {
 				"files.eol": "\n",
@@ -70,5 +69,4 @@
 			}
 		}
 	},
-	"postCreateCommand": ". ./.devcontainer/post-create.sh | tee /tmp/post-create-log.txt"
-}
+	"postCreateCommand": ". ./.devcontainer/post-create.sh | tee /tmp/post_create_log.txt"

@@ -1,8 +1,7 @@
 {
    "name": "R with Tidyverse",
-   // "image": "ghcr.io/joejcollins/lady-penelope-r:latest",
 	"build": {
-		"dockerfile": "Dockerfile"
+		"dockerfile": "r.Dockerfile"
 	},
    "features": {
       "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
@@ -28,6 +27,5 @@
          "onAutoForward": "openBrowser"
       }
    },
-   // Use 'postCreateCommand' to run commands after the container is created.
-   "postCreateCommand": ". ./.devcontainer/r/post-create.sh | tee /tmp/post-create-log.txt"
+   "postCreateCommand": ". ./.devcontainer/r_post_create.sh | tee /tmp/post_create_log.txt"
 }
