@@ -27,6 +27,12 @@ jobs:
           make report
           make test
       
+      - name: Set up R dependencies.
+        run: |
+          install.packages("renv")
+          renv::restore()
+        shell: Rscript {0}
+
       - name: Run R tests.
         run: |
           make rtest
