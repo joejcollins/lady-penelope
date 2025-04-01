@@ -180,10 +180,6 @@ six==1.17.0
     #   rchitect
 snowballstemmer==2.2.0
     # via sphinx
-sourcery==1.35.0
-    # via
-    #   lady-penelope (pyproject.toml)
-    #   lady-penelope
 sphinx==8.2.3
     # via
     #   lady-penelope (pyproject.toml)

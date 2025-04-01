@@ -7,6 +7,11 @@ clean:  # Remove all build, test, coverage and Python artifacts.
 	find . -name "*.pyc" -exec rm -f {} \;
 	find . -type f -name "*.py[co]" -delete -or -type d -name "__pycache__" -delete
 
+docker:  # Build tag and push the docker image
+	docker build \
+		--tag ghcr.io/joejcollins/lady-penelope:latest \
+		--file .devcontainer/Dockerfile .
+
 .PHONY: docs  # because there is a directory called docs.
 docs:  # Build the Sphinx documentation.
 	rm -rf site

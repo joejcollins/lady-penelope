@@ -22,7 +22,6 @@ dependencies = [
     "pytest-cov",
     "radian",
     "ruff",
-    "sourcery",
     "sphinx",                # for documentation.
     "sphinx_rtd_theme",      # for documentation.
     "sphinxcontrib-mermaid", # for diagrams in the documentation.
