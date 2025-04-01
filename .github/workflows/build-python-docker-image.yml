@@ -42,7 +42,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./.devcontainer/Dockerfile
+        file: ./.devcontainer/python.Dockerfile
         push: true
         tags: |
           ghcr.io/joejcollins/lady-penelope-python:latest

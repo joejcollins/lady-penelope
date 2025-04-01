@@ -41,7 +41,7 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./.devcontainer/Dockerfile
+        file: ./.devcontainer/r.Dockerfile
         push: true
         tags: |
           ghcr.io/joejcollins/lady-penelope-r:latest
