@@ -8,14 +8,6 @@ clean:  # Remove all build, test, coverage and Python artifacts.
 	find . -type f -name "*.py[co]" -delete -or -type d -name "__pycache__" -delete
 	rm -rf .R/library/*
 
-docker:  # Build tag and push the docker image
-	docker build \
-		-t ghcr.io/joejcollins/lady-penelope:latest \
-		-f Dockerfile \
-		--target development .
-	# echo $$REPO_AND_PACKAGES_TOKEN | docker login ghcr.io -u joejcollins --password-stdin
-	# docker push ghcr.io/joejcollins/lady-penelope:latest
-
 .PHONY: docs  # because there is a directory called docs.
 docs:  # Build the Sphinx documentation.
 	rm -rf site
@@ -40,7 +32,7 @@ lock:  # Create the lock file and requirements file.
 	rm -f requirements.txt
 	uv pip compile pyproject.toml --python .venv/bin/python --output-file=requirements.txt  requirements.in
 
-pytest:  # Run the unit tests.
+test:  # Run the unit tests.
 	.venv/bin/pytest ./tests --verbose --color=yes
 	.venv/bin/pytest --cov=lady_penelope --cov-fail-under=20
 
