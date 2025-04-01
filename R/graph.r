@@ -1,1 +1,1 @@
-curve(x^2 + 6)
+curve(x^2 + 5)
