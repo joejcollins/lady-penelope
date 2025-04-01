@@ -1,8 +1,6 @@
 {
    "name": "R with Tidyverse",
-   "build": {
-      "dockerfile": "../r.Dockerfile"
-   },
+	"image": "ghcr.io/joejcollins/lady-penelope-r:latest",
    "features": {
       "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
       "ghcr.io/devcontainers-contrib/features/starship:1": {}
