@@ -1,6 +1,6 @@
 Package: lady.penelope
-Title: Python and R Template
-Version: 0.0.0.9000
+Title: Data project template
+Version: 0.0.0.1
 Authors@R: 
     person("Joe", "Collins", , "joejcollins@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0004-5788-9856"))
@@ -14,5 +14,5 @@ Imports:
   ggplot2 (>= 3.3.0),
   tidyr (>= 1.1.0)
 Suggests:
-    testthat (>= 3.0.0)
+  testthat (>= 3.0.0)
 Config/testthat/edition: 3
