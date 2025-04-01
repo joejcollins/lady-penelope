@@ -6,7 +6,7 @@ on:
     branches: [ main ]
     paths:
       - '.github/workflows/build-docker-image.yml'
-      - '.devcontainer/**'
+      - '.devcontainer/*'
 
 jobs:
   build-and-push:

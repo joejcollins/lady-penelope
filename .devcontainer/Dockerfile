@@ -1,5 +1,11 @@
-# Get a Rocker image with LaTeX already installed.
+# Get a Rocker image.
 FROM ghcr.io/rocker-org/devcontainer/tidyverse:4.4
+
+# Install LaTeX because it is not inluded in the Rocker image.
+RUN apt-get --quiet update \
+&& apt-get install --assume-yes texlive-latex-extra texlive-extra-utils latexmk \
+&& apt-get clean \
+&& rm -rf /var/lib/apt/lists/*
 
 # Install uv for everyone not just the current user.
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh \
