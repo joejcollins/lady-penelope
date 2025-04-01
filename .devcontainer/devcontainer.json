@@ -65,14 +65,16 @@
 				"latex-workshop.synctex.afterBuild.enabled": true
 			},
 			"extensions": [
-				"anweber.vscode-httpyac",
 				"charliermarsh.ruff",
 				"james-yu.latex-workshop",
-				"ms-toolsai.jupyter",
+				"mechatroner.rainbow-csv",
+				"ms-python.mypy-type-checker",
 				"ms-python.python",
+				"ms-toolsai.jupyter",
+				"ms-vscode.makefile-tools",
 				"RDebugger.r-debugger",
 				"reditorsupport.r",
-				"sourcery.sourcery",
+				"streetsidesoftware.code-spell-checker",
 				"tamasfe.even-better-toml"
 			]
 		}

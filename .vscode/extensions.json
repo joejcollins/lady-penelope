@@ -1,11 +1,8 @@
 {
     "recommendations": [
         "charliermarsh.ruff",
-        "ms-azuretools.vscode-docker",
-        "charliermarsh.ruff",
-        "eamodio.gitlens",
         "james-yu.latex-workshop",
-        "ms-python.black-formatter",
+        "mechatroner.rainbow-csv",
         "ms-python.mypy-type-checker",
         "ms-python.python",
         "ms-toolsai.jupyter",
