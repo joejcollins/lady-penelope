@@ -77,8 +77,5 @@
 			]
 		}
 	},
-	"postCreateCommand": ". ./.devcontainer/post_create.sh | tee /tmp/post_create_log.txt",
-	"features": {
-		"ghcr.io/devcontainers/features/docker-in-docker:2": {}
-	}
+	"postCreateCommand": ". ./.devcontainer/post_create.sh | tee /tmp/post_create_log.txt"
 }
