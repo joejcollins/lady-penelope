@@ -7,15 +7,18 @@ RUN apt-get --quiet update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Precache the R packages to improve start up times.
-WORKDIR /app
+# Install uv for everyone not just the current user.
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh \
+    && cp /root/.local/bin/uv /usr/local/bin/uv
+
+# Precache the R packages for the rstudio user to improve start up times.
+USER rstudio
+WORKDIR /home/rstudio/app
 COPY renv.lock ./
 RUN R -e "install.packages('renv')" \
     && R -e "renv::restore()"
 
-# Install uv for everyone not just the current user.
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh \
-    && cp /root/.local/bin/uv /usr/local/bin/uv
+# Precache the Python packages for the rstudio user as well.
 COPY pyproject.toml requirements.txt Makefile ./
 RUN make venv
 
