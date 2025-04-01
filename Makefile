@@ -36,6 +36,7 @@ test:  # Run the unit tests.
 	.venv/bin/pytest ./tests --verbose --color=yes
 	.venv/bin/pytest --cov=lady_penelope --cov-fail-under=20
 
+.PHONY: r # because there is a directory called r.
 r:  # Run Rstudio server
 	sudo su - rstudio -c 'rserver'
 
