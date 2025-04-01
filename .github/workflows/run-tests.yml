@@ -1,5 +1,5 @@
 ---
-name: Run Python Tests
+name: Run Tests
 
 on:
   pull_request:
@@ -12,7 +12,7 @@ jobs:
     # root (= the default docker user).
     # See <https://docs.github.com/en/enterprise-server@3.12/actions/creating-actions/dockerfile-support-for-github-actions#user>.
     container:
-      image: ghcr.io/joejcollins/lady-penelope-python:latest
+      image: ghcr.io/joejcollins/lady-penelope:latest
       options: --user root
 
     steps:
@@ -25,5 +25,5 @@ jobs:
         run: |
           make venv
           make report
-          make pytest
+          make test
 ...

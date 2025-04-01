@@ -1,13 +1,12 @@
 ---
-name: Build Python Docker Image
+name: Build Docker Image
 
 on:
   push:
     branches: [ main ]
     paths:
-      - '.github/workflows/build-python-docker-image.yml'
-      - 'requirements.txt'
-      - '.devcontainer/*'
+      - '.github/workflows/build-docker-image.yml'
+      - '.devcontainer/**'
 
 jobs:
   build-and-push:
@@ -38,13 +37,13 @@ jobs:
         calculatedSha=$(git rev-parse --short ${{ github.sha }})
         echo "COMMIT_SHORT_SHA=$calculatedSha" >> $GITHUB_ENV
 
-    - name: Build and Push Python Docker Image
+    - name: Build and Push Docker Image
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./.devcontainer/python.Dockerfile
+        file: ./.devcontainer/Dockerfile
         push: true
         tags: |
-          ghcr.io/joejcollins/lady-penelope-python:latest
-          ghcr.io/joejcollins/lady-penelope-python:${{ env.COMMIT_SHORT_SHA }}
+          ghcr.io/joejcollins/lady-penelope:latest
+          ghcr.io/joejcollins/lady-penelope:${{ env.COMMIT_SHORT_SHA }}
 ...

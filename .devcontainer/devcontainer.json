@@ -1,6 +1,8 @@
 {
-	"name": "Python with UV",
-	"image": "ghcr.io/joejcollins/lady-penelope-python:latest",
+	"name": "Python with R",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
 	"hostRequirements": {
 		"cpus": 4,
 		"memory": "8gb"
@@ -9,13 +11,67 @@
 		"vscode": {
 			"settings": {
 				"python.defaultInterpreterPath": ".venv/bin/python",
-				"python.terminal.activateEnvironment": true
+				"python.terminal.activateEnvironment": true,
+				"editor.formatOnSave": true,
+				"files.associations": {
+					"*.tex": "latex"
+				},
+				"latex-workshop.latex.autoClean.run": "onBuilt",
+				"latex-workshop.latex.clean.subfolder.enabled": true,
+				"latex-workshop.latex.tools": [
+					{
+						"name": "latexmk",
+						"command": "latexmk",
+						"args": [
+							"-synctex=1",
+							"-interaction=nonstopmode",
+							"-file-line-error",
+							"-pdf",
+							"-outdir=%OUTDIR%",
+							"%DOC%"
+						],
+						"env": {}
+					},
+					{
+						"name": "pdflatex",
+						"command": "pdflatex",
+						"args": [
+							"-synctex=1",
+							"-interaction=nonstopmode",
+							"-file-line-error",
+							"%DOC%"
+						],
+						"env": {}
+					},
+					{
+						"name": "bibtex",
+						"command": "bibtex",
+						"args": [
+							"%DOCFILE%"
+						],
+						"env": {}
+					}
+				],
+				"latex-workshop.linting.chktex.enabled": true,
+				"latex-workshop.linting.chktex.exec.path": "/usr/local/bin/chktex",
+				"latex-workshop.latexindent.enabled": true,
+				"latex-workshop.latexindent.exec.path": "latexindent",
+				"latex-workshop.formatting.latexindent.args": [
+					"-c",
+					"%DIR%/",
+					"%TMPFILE%",
+					"-y=defaultIndent: '%INDENT%'"
+				],
+				"latex-workshop.synctex.afterBuild.enabled": true
 			},
 			"extensions": [
 				"anweber.vscode-httpyac",
 				"charliermarsh.ruff",
+				"james-yu.latex-workshop",
 				"ms-toolsai.jupyter",
 				"ms-python.python",
+				"RDebugger.r-debugger",
+				"reditorsupport.r",
 				"sourcery.sourcery",
 				"tamasfe.even-better-toml"
 			]
