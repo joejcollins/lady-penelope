@@ -319,3 +319,4 @@ shit.*
 
 # Generated pdfs
 reports/*.pdf
+notebooks/*.pdf
