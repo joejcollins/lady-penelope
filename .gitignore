@@ -302,6 +302,8 @@ rsconnect/
 
 .R/
 
+renv/
+
 ###########
 # PROJECT #
 ###########
