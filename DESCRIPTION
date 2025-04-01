@@ -2,17 +2,13 @@ Package: lady.penelope
 Title: Data project template
 Version: 0.0.0.1
 Authors@R: 
-    person("Joe", "Collins", , "joejcollins@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "0009-0004-5788-9856"))
+    person("Joe", "Collins", email = "joejcollins@gmail.com",
+    role = c("aut", "cre"),
+    comment = c(ORCID = "0009-0004-5788-9856"))
 Description: Python and R Data Analysis Template.
 License: MIT + file LICENSE
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
-Imports:
-  dplyr (>= 1.0.0),
-  ggplot2 (>= 3.3.0),
-  tidyr (>= 1.1.0)
-Suggests:
-  testthat (>= 3.0.0)
-Config/testthat/edition: 3
+Depends: R (>= 4.0)
+Imports: MASS, Matrix, R6, cli, cpp11, dplyr, fansi, ggplot2, glue, lattice,
+    lifecycle, magrittr, mgcv, nlme, pillar, pkgconfig, purrr, renv, rlang,
+    stringi, stringr, tibble, tidyr, utf8, vctrs, withr

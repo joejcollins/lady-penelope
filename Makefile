@@ -31,6 +31,7 @@ lint:  # Lint the code with ruff and mypy.
 lock:  # Create the lock file and requirements file.
 	rm -f requirements.txt
 	uv pip compile pyproject.toml --python .venv/bin/python --output-file=requirements.txt  requirements.in
+	R -e 'renv::snapshot()'
 
 test:  # Run the unit tests.
 	.venv/bin/pytest ./tests --verbose --color=yes
@@ -44,6 +45,7 @@ report:  # Report the python version and pip list.
 	.venv/bin/python --version
 	uv pip list -v
 
-venv:  # Create the virtual environment.
+venv:  # Create the virtual environment and renv library.
 	uv venv .venv
 	uv pip install --python .venv/bin/python --requirements requirements.txt
+	R -e 'renv::activate(); renv::restore()'
