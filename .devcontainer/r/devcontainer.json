@@ -1,9 +1,9 @@
 {
    "name": "R with Tidyverse",
-	"build": {
+   "build": {
       "context": "..",
-		"dockerfile": "./r/Dockerfile"
-	},
+      "dockerfile": "./r/Dockerfile"
+   },
    "features": {
       "ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {},
       "ghcr.io/devcontainers-contrib/features/starship:1": {}
