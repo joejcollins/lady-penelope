@@ -22,4 +22,4 @@ sleep 1
 sudo pkill rserver
 
 # Ensure git sees the directory as safe
-git config --global --add safe.directory /workspaces/$RepositoryName
+git config --global --add safe.directory /workspaces/lady-penelope
