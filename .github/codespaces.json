@@ -1,13 +1,15 @@
 {
     "definitions": {
+        "latex": {
+            "path": ".devcontainer/latex/devcontainer.json",
+            "repository": "git@github.com:joejcollins/lady-penelope.git"
+        },
         "python": {
             "path": ".devcontainer/devcontainer.json"
         },
-        "latex": {
-            "path": ".devcontainer/latex/devcontainer.json"
-        },
         "r": {
-            "path": ".devcontainer/r/devcontainer.json"
+            "path": ".devcontainer/r/devcontainer.json",
+            "repository": "git@github.com:joejcollins/lady-penelope.git"
         }
     }
 }
